@@ -1,1 +1,30 @@
 /* below the fold CSS goes here */
+@font-face {
+    font-family: 'ITC Avant Garde Gothic W01 Bk';
+    src: url('fonts/ITCAvantGardeGothicW01-Book.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'ITC Avant Garde Gothic W01 Md';
+    src: url('fonts/ITCAvantGardeGothicW01-Md.woff2') format('woff2');
+}
+
+@font-face{
+    font-family:"ITC Avant Garde GothicW01MdObl";
+    src:url("fonts/ITCAvantGardeGothicW01-MdObl.woff2") format('woff2');
+}
+
+@font-face{
+    font-family:"ITC Avant Garde Gothic W01 Dm";
+    src:url("fonts/ITCAvantGardeGothicW01-Dm.woff2") format('woff2');
+}
+
+@font-face{
+    font-family:"ITC Avant Garde Gothic W01 Bd";
+    src:url("fonts/ITCAvantGardeGothicW01-Bd.woff2") format('woff2');
+}
+
+@font-face{
+    font-family:"Felt Tip Roman W01 Reg";
+    src:url("fonts/FeltTipRomanW01-Reg.woff2") format('woff2');
+}
