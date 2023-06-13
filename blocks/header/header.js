@@ -1,7 +1,7 @@
 import { getMetadata, decorateIcons } from '../../scripts/lib-franklin.js';
 
 // media query match that indicates mobile/tablet width
-const isDesktop = window.matchMedia('(min-width: 900px)');
+const isDesktop = window.matchMedia('(min-width: 992px)');
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
@@ -143,5 +143,10 @@ export default async function decorate(block) {
     navWrapper.className = 'nav-wrapper';
     navWrapper.append(nav);
     block.append(navWrapper);
+
+    document.addEventListener('scroll', () => {
+      const navSection = document.querySelector('.nav-sections');
+      navSection.setAttribute('fixed-header', window.scrollY > 100 ? 'true' : 'false');
+    });
   }
 }
