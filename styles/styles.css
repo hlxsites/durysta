@@ -52,7 +52,7 @@
   --nav-height: 210px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 990px) {
   :root {
     --heading-font-size-xxl: 32px;
     --heading-font-size-xl: 24px;
@@ -259,7 +259,7 @@ main .section {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 990px) {
   .section > div {
     max-width: 1200px;
     margin: auto;
