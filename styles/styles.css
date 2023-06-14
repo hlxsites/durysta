@@ -20,6 +20,7 @@
   --highlight-background-color: #ccc;
   --header-background-color: #00806e;
   --footer-background-color: #00806e;
+  --footer-text-color: #fff;
   --heading-text-color-xxl: #00806e;
   --heading-text-color-xl: #00806e;
   --heading-text-color-l: #c4622d;
@@ -31,6 +32,7 @@
   --heading-font-family-xxl: 'ITC Avant Garde Gothic W01 Md', var(--fixed-font-family);
   --heading-font-family-xl: 'ITC Avant Garde Gothic W01 Md', var(--fixed-font-family);
   --heading-font-family-l: 'ITC Avant Garde Gothic W01 Dm', var(--fixed-font-family);
+  --footer-font-family: 'ITC Avant Garde Gothic W01 Bk', var(--fixed-font-family);
 
   /* body sizes */
   --body-font-size-l: 23px;
