@@ -5,17 +5,14 @@ main .carousel-container {
 main div.carousel-wrapper {
   width: 100%;
   position: relative;
-  max-width: 1440px;
   margin: 0 auto;
 }
-
 
 main .carousel {
   display: flex;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
-
 }
 
 main .carousel-item { 
@@ -27,8 +24,17 @@ main .carousel-item {
   align-items: center;
 }
 
+.carousel-item-image picture.desktop {
+  display: none;
+}
+
+.carousel-item-image picture.mobile {
+  display: block;
+  width: 100%;
+}
+
 .carousel-item-image img {
-  object-fit: contain;
+  object-fit:contain;
   width: 100%;
   height: 100%;
   margin-bottom: -5px;
@@ -36,6 +42,12 @@ main .carousel-item {
   border: none;
   display: block;
 }
+
+.carousel-item-image picture.mobile img {
+  height: 830px;
+}
+
+
 
 main .carousel-item-columns-container {
   display: flex;
@@ -54,11 +66,11 @@ main .carousel-item.selected .button-container {
 
 .carousel-item-column
 .button-container .button.primary {
-  line-height: 25px;
+  line-height: 12px;
   font-family: var(--find-doctor-font-family);
-  font-size: 16px;
+  font-size: 12px;
   background-color: var(--clr-green);
-  padding: 10px 20px;
+  padding: 12px 20px;
   text-transform:uppercase;
 }
 
@@ -72,8 +84,8 @@ main .carousel-dot-buttons {
 }
 
 main .carousel-dot-button {
-  height: 20px;
-  width: 20px;
+  height: 12px;
+  width: 12px;
   background-color: #fff;
   border-radius: 50%;
   padding: 0;
@@ -101,4 +113,41 @@ main .carousel-nav-left {
 main .carousel-nav-right {
   right: 3%;
   background: url('../../icons/right-arrow.png') no-repeat right;
+}
+
+@media (min-width : 768px ) {
+  .carousel-item-image picture.desktop {
+    display: block;
+  }
+
+  .carousel-item-image picture.mobile {
+    display: none;
+  }
+
+  main div.carousel-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  main .carousel-dot-button {
+    height: 20px;
+    width: 20px;
+  }
+
+  .carousel-item-column
+  .button-container .button.primary {
+    line-height: 25px;
+    font-family: var(--find-doctor-font-family);
+    font-size: 16px;
+    background-color: var(--clr-green);
+    padding: 10px 20px;
+    text-transform:uppercase;
+  }
+
+  .carousel-item-image img { 
+    height: auto;
+  }
+
+  
 }

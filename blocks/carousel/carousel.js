@@ -358,6 +358,10 @@ class Carousel {
 
     const itemChildren = [...item.children];
     itemChildren.forEach((itemChild, idx) => {
+      if(itemChild.querySelectorAll('p').length > 1){
+        itemChild.querySelector('p:first-of-type > picture').classList.add('mobile');
+        itemChild.querySelector('p:nth-of-type(2) > picture').classList.add('desktop');
+      }
       if (itemChild.querySelector('img')) {
         itemChild.classList.add('carousel-item-image');
       } else {
