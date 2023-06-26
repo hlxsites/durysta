@@ -16,19 +16,20 @@
   --link-color: #007bff;
   --link-hover-color: #007bff;
   --background-color: #fff;
+  --clr-green: #00806e;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
-  --header-background-color: #00806e;
+  --header-background-color: var(--clr-green);
   --header-hover-background-color: #ffc60b;
   --header-text-color: #fff;
   --header-text-hover-color: #414042;
   --header-find-doctor-color: #000;
   --header-tools-text-color: #414042;
-  --header-hamburger-color: #00806e;
-  --footer-background-color: #00806e;
+  --header-hamburger-color: var(--clr-green);;
+  --footer-background-color: var(--clr-green);
   --footer-text-color: #fff;
-  --heading-text-color-xxl: #00806e;
-  --heading-text-color-xl: #00806e;
+  --heading-text-color-xxl: var(--clr-green);
+  --heading-text-color-xl: var(--clr-green);
   --heading-text-color-l: #c4622d;
 
   /* fonts */
@@ -74,6 +75,7 @@
     --heading-font-size-m: 24px;
     --heading-font-size-s: 20px;
     --heading-font-size-xs: 18px;
+    --nav-height: 234.5px;
   }
 }
 

@@ -1,4 +1,3 @@
-
 /**
  * Example Usage:
  *
@@ -33,6 +32,7 @@ export function domEl(tag, ...items) {
 
   if (!(items[0] instanceof Element || items[0] instanceof HTMLElement) && typeof items[0] === 'object') {
     const [attributes, ...rest] = items;
+    // eslint-disable-next-line no-param-reassign
     items = rest;
 
     Object.entries(attributes).forEach(([key, value]) => {
@@ -45,6 +45,7 @@ export function domEl(tag, ...items) {
   }
 
   items.forEach((item) => {
+    // eslint-disable-next-line no-param-reassign
     item = item instanceof Element || item instanceof HTMLElement
       ? item
       : document.createTextNode(item);
