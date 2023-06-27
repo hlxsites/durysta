@@ -31,12 +31,30 @@ function buildHeroBlock(main) {
 }
 
 /**
+ * Builds a section divider
+ * @param {Element} main The container element
+ */
+function buildSectionDivider(main) {
+  const sectionDividers = main.querySelectorAll('code');
+
+  sectionDividers.forEach((el) => {
+    const alt = el.innerText.trim();
+    const lower = alt.toLowerCase();
+    if (lower === 'divider') {
+      el.innerText = '';
+      el.classList.add('section-divider');
+    }
+  });
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 function buildAutoBlocks(main) {
   try {
-    buildHeroBlock(main);
+    // buildHeroBlock(main);
+    buildSectionDivider(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);

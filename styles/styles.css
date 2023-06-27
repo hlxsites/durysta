@@ -297,6 +297,15 @@ main .section.highlight {
   background-color: var(--highlight-background-color);
 }
 
+main .section-divider {
+  border-top: 5px solid var(--clr-green);
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: block;
+  box-sizing: border-box;
+}
+
 main .section.green-box.carousel-container {
   max-width: 84%;
   margin: 0 auto;
