@@ -53,7 +53,7 @@ function buildSectionDivider(main) {
  */
 function buildAutoBlocks(main) {
   try {
-    // buildHeroBlock(main);
+    buildHeroBlock(main);
     buildSectionDivider(main);
   } catch (error) {
     // eslint-disable-next-line no-console
