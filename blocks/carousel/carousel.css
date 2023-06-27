@@ -6,6 +6,7 @@ main div.carousel-wrapper {
   width: 100%;
   position: relative;
   margin: 0 auto;
+  background-color: #fff;
 }
 
 main .carousel {
@@ -13,6 +14,13 @@ main .carousel {
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
+}
+
+main .section.green-box.carousel-container .carousel {
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  overflow: hidden;
+ 
 }
 
 main .carousel-item { 
@@ -31,6 +39,7 @@ main .carousel-item {
 .carousel-item-image picture.mobile {
   display: block;
   width: 100%;
+  height: 830px;
 }
 
 .carousel-item-image img {
@@ -44,10 +53,10 @@ main .carousel-item {
 }
 
 .carousel-item-image picture.mobile img {
-  height: 830px;
+  width:100%;
+  height:100%;
+  
 }
-
-
 
 main .carousel-item-columns-container {
   display: flex;
@@ -60,8 +69,8 @@ main .carousel-item .button-container {
 main .carousel-item.selected .button-container {
   display: inline-block;
   position: absolute;
-  bottom: 16%;
-  left: 22%;
+  bottom: 6%;
+  left: 25%;
 }
 
 .carousel-item-column
@@ -76,7 +85,7 @@ main .carousel-item.selected .button-container {
 
 main .carousel-dot-buttons {
   position: absolute;
-  bottom: 0%;
+  bottom: 1%;
   left: 50%;
   display: flex;
   justify-content: center;
@@ -106,13 +115,35 @@ main .carousel-nav-button {
 }
 
 main .carousel-nav-left {
-  left: 3%;
+  left: 0%;
   background: url('../../icons/left-arrow.png') no-repeat left;
 }
 
 main .carousel-nav-right {
-  right: 3%;
+  right: 0%;
   background: url('../../icons/right-arrow.png') no-repeat right;
+}
+
+main .section.green-box.carousel-container .carousel-dot-buttons {
+  position: relative;
+  left:0;
+  background-color: #fff;
+}
+
+main .section.green-box.carousel-container .carousel-dot-button.selected {
+  background-color: #ffc60b;
+  border-color: #ffc60b;
+  border: 1px solid #414042;
+}
+
+main .section.green-box.carousel-container .carousel-dot-button
+{
+  /* padding: 18px; */
+  box-shadow: 3px -2px 6px 2px #0003;
+  width: 22px;
+  height: 22px;
+  color:#414042;
+  border: 1px solid #414042;
 }
 
 @media (min-width : 768px ) {
@@ -130,9 +161,25 @@ main .carousel-nav-right {
     margin: 0 auto;
   }
 
+  main .carousel-dot-buttons {
+    bottom: 0%;
+  }
+
   main .carousel-dot-button {
     height: 20px;
     width: 20px;
+  }
+
+  main .section.green-box.carousel-container .carousel-dot-button
+   {
+    padding: 18px;
+    width: 40px;
+    height: 40px;
+  }
+
+  main .carousel-item.selected .button-container {
+    bottom: 16%;
+    left: 22%;
   }
 
   .carousel-item-column
@@ -149,5 +196,12 @@ main .carousel-nav-right {
     height: auto;
   }
 
+  main .carousel-nav-left {
+    left: 2%;
+  }
+  
+  main .carousel-nav-right {
+    right: 2%;
+  }
   
 }

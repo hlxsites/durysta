@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -10,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
- :root {
+:root {
   /* colors */
   --text-color: #212529;
   --link-color: #007bff;
@@ -42,6 +43,7 @@
   --header-tools-font-family: 'ITC Avant Garde Gothic W01 Md', var(--fixed-font-family);
   --footer-font-family: 'ITC Avant Garde Gothic W01 Bk', var(--fixed-font-family);
   --find-doctor-font-family: 'ITC Avant Garde Gothic W01 Bd', var(--fixed-font-family);
+  --ff-itc-avant-bold: 'ITC Avant Garde Gothic W01 Bd';
 
   /* body sizes */
   --body-font-size-l: 23px;
@@ -80,7 +82,7 @@
 }
 
 body {
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-m);
   margin: 0;
   font-family: var(--body-font-family);
   line-height: 1.6;
@@ -280,9 +282,49 @@ main .section {
     max-width: 1200px;
     margin: auto;
   }
+
+  main .section.green-box.carousel-container {
+    max-width: 1160px;
+  }
 }
 
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
+}
+
+main .section.green-box.carousel-container {
+  max-width: 84%;
+  margin: 0 auto;
+  border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
+  overflow: hidden;
+  background-color: var(--clr-green);
+  color: #fff;
+  text-align: center;
+}
+
+main .section.green-box.carousel-container .default-content-wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+main .section.green-box.carousel-container .default-content-wrapper p {
+  padding: 0 0 10px;
+  margin: 0;
+  font-size: 14px;
+  max-width: 50%;
+}
+
+main .section.green-box.carousel-container h4 {
+  font-family: var(--ff-itc-avant-bold);
+  font-size: 18px;
+  line-height: 24px;
+  vertical-align: baseline;
+  max-width: 30%;
+  
 }
