@@ -277,15 +277,19 @@ main .section {
   }
 }
 
+@media (min-width: 768px) {
+  main .section.green-box.carousel-container {
+    max-width: 1160px !important;
+  }
+}
+
 @media (min-width: 990px) {
   .section > div {
     max-width: 1200px;
     margin: auto;
   }
 
-  main .section.green-box.carousel-container {
-    max-width: 1160px;
-  }
+ 
 }
 
 /* section metadata */

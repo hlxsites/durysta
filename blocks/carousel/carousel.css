@@ -23,6 +23,8 @@ main .section.green-box.carousel-container .carousel {
  
 }
 
+
+
 main .carousel-item { 
   width: 100%;
   display: flex;
@@ -114,6 +116,10 @@ main .carousel-nav-button {
   transform: translate(0, -50%);
 }
 
+main .section.green-box.carousel-container .carousel-nav-button {
+  top : 35%;
+}
+
 main .carousel-nav-left {
   left: 0%;
   background: url('../../icons/left-arrow.png') no-repeat left;
@@ -138,7 +144,6 @@ main .section.green-box.carousel-container .carousel-dot-button.selected {
 
 main .section.green-box.carousel-container .carousel-dot-button
 {
-  /* padding: 18px; */
   box-shadow: 3px -2px 6px 2px #0003;
   width: 22px;
   height: 22px;
