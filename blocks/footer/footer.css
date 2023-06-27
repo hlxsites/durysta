@@ -14,7 +14,7 @@ footer .footer {
   text-align: center;
 }
 
-footer .footer a,p {
+footer .footer a, footer .footer p {
   font-family: var(--footer-font-family);
   color: var(--footer-text-color);
 }
