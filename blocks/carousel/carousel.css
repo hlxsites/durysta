@@ -132,8 +132,13 @@ main .carousel-nav-right {
 
 main .section.green-box.carousel-container .carousel-dot-buttons {
   position: relative;
-  left:0;
+  left: 0;
   background-color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  width: 30%;
+  margin: 0 auto;
+  padding-top : 20px;
 }
 
 main .section.green-box.carousel-container .carousel-dot-button.selected {
