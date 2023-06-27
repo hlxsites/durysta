@@ -32,6 +32,10 @@
   --heading-text-color-xxl: var(--clr-green);
   --heading-text-color-xl: var(--clr-green);
   --heading-text-color-l: #c4622d;
+  --faq-title-background-color: #00806e;
+  --faq-title-color: #fff;
+  --faq-text-color: #414042;
+  --faq-implant-text-color: #c4622d;
 
   /* fonts */
   --heading-font-family: sans-serif;
@@ -44,6 +48,8 @@
   --footer-font-family: 'ITC Avant Garde Gothic W01 Bk', var(--fixed-font-family);
   --find-doctor-font-family: 'ITC Avant Garde Gothic W01 Bd', var(--fixed-font-family);
   --ff-itc-avant-bold: 'ITC Avant Garde Gothic W01 Bd';
+  --faq-title-font-family: 'ITC Avant Garde Gothic W01 Dm', var(--fixed-font-family);
+  --faq-link-font-family: 'ITC Avant Garde Gothic W01 Bd', var(--fixed-font-family);
 
   /* body sizes */
   --body-font-size-l: 23px;
