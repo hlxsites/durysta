@@ -1,3 +1,4 @@
+/* stylelint-disable custom-property-pattern */
 
 /*
  * Copyright 2020 Adobe. All rights reserved.
@@ -10,6 +11,89 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
+
+/* || Fallback fonts */
+
+@font-face {
+  font-family: 'ITCAvantGardeGothicW01-Bold-Fallback';
+  src: local('Arial');
+  size-adjust: 112%;
+  ascent-override: 95%;
+  descent-override: 21%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'ITCAvantGardeGothicW01-Demi-Fallback';
+  src: local('Arial');
+  size-adjust: 105%;
+  ascent-override: 95%;
+  descent-override: 17%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'ITCAvantGardeGothicW01-DmObl-Fallback';
+  src: local('Arial');
+  size-adjust: 104%;
+  ascent-override: 89%;
+  descent-override: 17%;
+  line-gap-override: 12%;
+}
+
+@font-face {
+  font-family: 'FeltTipRomanW01-Reg-Fallback';
+  src: local('Times New Roman');
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 13%;
+  line-gap-override: 15%;
+}
+
+@font-face {
+  font-family: 'ITCAvantGardeGothicW01-Bd-Fallback';
+  src: local('Arial Black');
+  size-adjust: 91%;
+  ascent-override: 110%;
+  descent-override: 11%;
+  line-gap-override: 21%;
+}
+
+@font-face {
+  font-family: 'ITCAvantGardeGothicW01-Book-Fallback';
+  src: local('Arial Narrow');
+  size-adjust: 131%;
+  ascent-override: 66%;
+  descent-override: 5%;
+  line-gap-override: 19%;
+}
+
+@font-face {
+  font-family: 'ITCAvantGardeGothicW01-Dm-Fallback';
+  src: local('Arial');
+  size-adjust: 105%;
+  ascent-override: 87%;
+  descent-override: 9%;
+  line-gap-override: 19%;
+}
+
+@font-face {
+  font-family: 'ITCAvantGardeGothicW01-Md-Fallback';
+  src: local('Arial');
+  size-adjust: 108%;
+  ascent-override: 82%;
+  descent-override: 11%;
+  line-gap-override: 16%;
+}
+
+@font-face {
+  font-family: 'ITCAvantGardeGothicW01-MdObl-Fallback';
+  src: local('Arial');
+  size-adjust: 108%;
+  ascent-override: 81%;
+  descent-override: 12%;
+  line-gap-override: 20%;
+}
 
 :root {
   /* colors */
@@ -38,18 +122,27 @@
   --faq-implant-text-color: #c4622d;
 
   /* fonts */
+  --ff-ITCAvantGardeGothicW01: 'ITCAvantGardeGothicW01','ITCAvantGardeGothicW01-Bold-Fallback',sans-serif;
+  --ff-ITCAvantGardeGothicW01-Demi: 'ITCAvantGardeGothicW01-Demi', 'ITCAvantGardeGothicW01-Demi-Fallback',sans-serif;
+  --ff-ITCAvantGardeGothicW01-DmObl: 'ITCAvantGardeGothicW01-DmObl', 'ITCAvantGardeGothicW01-DmObl-Fallback',sans-serif;
+  --ff-ITCAvantGardeGothicW01-Bd: 'ITCAvantGardeGothicW01-Bd','ITCAvantGardeGothicW01-Bd-Fallback',sans-serif;
+  --ff-ITCAvantGardeGothicW01-Book:'ITCAvantGardeGothicW01-Book', 'ITCAvantGardeGothicW01-Book-Fallback',sans-serif;
+  --ff-ITCAvantGardeGothicW01-Dm: 'ITCAvantGardeGothicW01-Dm', 'ITCAvantGardeGothicW01-Dm-Fallback',sans-serif;
+  --ff-ITCAvantGardeGothicW01-Md: 'ITCAvantGardeGothicW01-Md','ITCAvantGardeGothicW01-Md-Fallback',sans-serif;
+  --ff-ITCAvantGardeGothicW01-MdObl: 'ITCAvantGardeGothicW01-MdObl' ,'ITCAvantGardeGothicW01-MdObl-Fallback',sans-serif;
+  --ff-FeltTipRomanW01-Reg: 'FeltTipRomanW01-Reg','FeltTipRomanW01-Reg-Fallback',sans-serif;
   --heading-font-family: sans-serif;
-  --body-font-family: "ITC Avant Garde Gothic W01 Md", var(--fixed-font-family);
+  --body-font-family: var(--ff-ITCAvantGardeGothicW01-Md);
+  --heading-font-family-xxl: var(--ff-ITCAvantGardeGothicW01-Md);
+  --heading-font-family-xl: var(--ff-ITCAvantGardeGothicW01-Md);
+  --heading-font-family-l: var(--ff-ITCAvantGardeGothicW01-Dm);
+  --header-tools-font-family: var(--ff-ITCAvantGardeGothicW01-Md);
+  --footer-font-family: var(--ff-ITCAvantGardeGothicW01-Book);
+  --find-doctor-font-family: var(--ff-ITCAvantGardeGothicW01-Bd);
+  --ff-itc-avant-bold: var(--ff-ITCAvantGardeGothicW01-Bd);
+  --faq-title-font-family: var(--ff-ITCAvantGardeGothicW01-Dm);
+  --faq-link-font-family: var(--ff-ITCAvantGardeGothicW01-Bd);
   --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace;
-  --heading-font-family-xxl: 'ITC Avant Garde Gothic W01 Md', var(--fixed-font-family);
-  --heading-font-family-xl: 'ITC Avant Garde Gothic W01 Md', var(--fixed-font-family);
-  --heading-font-family-l: 'ITC Avant Garde Gothic W01 Dm', var(--fixed-font-family);
-  --header-tools-font-family: 'ITC Avant Garde Gothic W01 Md', var(--fixed-font-family);
-  --footer-font-family: 'ITC Avant Garde Gothic W01 Bk', var(--fixed-font-family);
-  --find-doctor-font-family: 'ITC Avant Garde Gothic W01 Bd', var(--fixed-font-family);
-  --ff-itc-avant-bold: 'ITC Avant Garde Gothic W01 Bd';
-  --faq-title-font-family: 'ITC Avant Garde Gothic W01 Dm', var(--fixed-font-family);
-  --faq-link-font-family: 'ITC Avant Garde Gothic W01 Bd', var(--fixed-font-family);
 
   /* body sizes */
   --body-font-size-l: 23px;
