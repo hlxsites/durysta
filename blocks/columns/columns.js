@@ -16,7 +16,6 @@ export default function decorate(block) {
     });
   });
 
-
   block.querySelectorAll(':scope > div > div').forEach((cell) => {
     if (!cell.previousElementSibling && !cell.nextElementSibling) cell.classList.add('columns-single');
     if (!cell.previousElementSibling && cell.nextElementSibling) cell.classList.add('columns-left');
