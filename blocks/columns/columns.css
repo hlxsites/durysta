@@ -41,7 +41,7 @@
   animation-fill-mode: both;
   animation-duration: 1s;
   animation-delay: 1.5s;
-  animation-name: fadeInLeft;
+  animation-name: fade-in-left;
 }
 
 .columns-slide-image-from-right .columns :is(.columns-right, .columns-single) :is(img) {
@@ -53,33 +53,29 @@
   animation-fill-mode: both;
   animation-duration: 1s;
   animation-delay: 1.2s;
-  animation-name: fadeInRight;
+  animation-name: fade-in-right;
 }
 
-@keyframes fadeInRight {
+@keyframes fade-in-right {
   0% {
       opacity: 0;
-      -webkit-transform: translate3d(100%,0,0);
       transform: translate3d(100%,0,0)
   }
 
-  to {
+  100% {
       opacity: 1;
-      -webkit-transform: translateZ(0);
       transform: translateZ(0)
   }
 }
 
-@keyframes fadeInLeft {
+@keyframes fade-in-left {
   0% {
       opacity: 0;
-      -webkit-transform: translate3d(-100%,0,0);
       transform: translate3d(-100%,0,0)
   }
 
-  to {
+  100% {
       opacity: 1;
-      -webkit-transform: translateZ(0);
       transform: translateZ(0)
   }
 }
