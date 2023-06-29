@@ -31,3 +31,55 @@
     order: unset;
   }
 }
+
+.columns-slide-image-from-left .columns :is(.columns-left, .columns-single) :is(img) {
+  opacity: 0;
+  transform: translate3d(100%,0,0);
+}
+
+.columns-slide-image-from-left .columns :is(.columns-left, .columns-single) :is(img).enter {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-name: fadeInLeft;
+}
+
+.columns-slide-image-from-right .columns :is(.columns-right, .columns-single) :is(img) {
+  opacity: 0;
+  transform: translate3d(100%,0,0);
+}
+
+.columns-slide-image-from-right .columns :is(.columns-right, .columns-single) :is(img).enter {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 1.2s;
+  animation-name: fadeInRight;
+}
+
+@keyframes fadeInRight {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(100%,0,0);
+      transform: translate3d(100%,0,0)
+  }
+
+  to {
+      opacity: 1;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0)
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%,0,0);
+      transform: translate3d(-100%,0,0)
+  }
+
+  to {
+      opacity: 1;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0)
+  }
+}

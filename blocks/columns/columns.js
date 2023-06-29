@@ -15,4 +15,24 @@ export default function decorate(block) {
       }
     });
   });
+
+
+  block.querySelectorAll(':scope > div > div').forEach((cell) => {
+    if (!cell.previousElementSibling && !cell.nextElementSibling) cell.classList.add('columns-single');
+    if (!cell.previousElementSibling && cell.nextElementSibling) cell.classList.add('columns-left');
+    if (!cell.nextElementSibling && cell.previousElementSibling) cell.classList.add('columns-right');
+    if (cell.previousElementSibling && cell.nextElementSibling) cell.classList.add('columns-middle');
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('enter');
+      }
+    });
+  });
+
+  block.querySelectorAll('img').forEach((media) => {
+    observer.observe(media);
+  });
 }
