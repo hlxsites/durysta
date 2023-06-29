@@ -5,6 +5,11 @@ import { sampleRUM, fetchPlaceholders, loadScript } from './lib-franklin.js';
 sampleRUM('cwv');
 
 // add more delayed functionality here
+// loading Adobe launch script
+loadScript(
+  'https://assets.adobedtm.com/ba387603a282/12150779357f/launch-da3cd118acca.min.js',
+  { async: '' },
+);
 
 // OneTrust Cookies Consent Notice start
 const placeholders = await fetchPlaceholders();
