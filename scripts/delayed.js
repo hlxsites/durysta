@@ -28,7 +28,7 @@ if (cookiepolicyLink) {
   cookiepolicyLink.classList.add('ot-sdk-show-settings', 'nopopup');
   cookiepolicyLink.addEventListener('click', (e) => {
     e.preventDefault();
-    // eslint-disable-next-line no-undef
-    OneTrust.showCookieSettingsHandler();
+    // eslint-disable-next-line no-undef, no-unused-expressions
+    OneTrust.showCookieSettingsHandler;
   });
 }
