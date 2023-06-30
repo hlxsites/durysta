@@ -98,8 +98,8 @@
 :root {
   /* colors */
   --text-color: #212529;
-  --link-color: #007bff;
-  --link-hover-color: #007bff;
+  --link-color: #212529;
+  --link-hover-color: #212529;
   --background-color: #fff;
   --clr-green: #00806e;
   --overlay-background-color: #eee;
@@ -142,6 +142,7 @@
   --ff-itc-avant-bold: var(--ff-ITCAvantGardeGothicW01-Bd);
   --faq-title-font-family: var(--ff-ITCAvantGardeGothicW01-Dm);
   --faq-link-font-family: var(--ff-ITCAvantGardeGothicW01-Bd);
+  --sitemap-menu-font-family: var(--ff-ITCAvantGardeGothicW01-Bd);
   --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace;
 
   /* body sizes */
@@ -169,7 +170,7 @@
 }
 
 body {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-s);
   margin: 0;
   font-family: var(--body-font-family);
   line-height: 1.6;
@@ -257,7 +258,7 @@ main pre {
 
 a:any-link {
   color: var(--link-color);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -355,14 +356,13 @@ main img {
 }
 
 main .section {
-  /* padding: 64px 16px; */
   padding: 0 1.5rem 1.5rem;
 }
 
 /* tablet break point */
 @media (min-width: 768px) {
-  main .section {
-    padding: 64px 32px;
+  body {
+    font-size: var(--body-font-size-m);
   }
 
   main .section.green-box.carousel-container {
@@ -386,11 +386,6 @@ main .section {
     max-width: 1200px;
     margin: auto;
   }
-}
-
-/* desktop break point */
-@media (min-width: 1200px) {
-
 }
 
 /* section metadata */
@@ -431,6 +426,10 @@ main .section.green-box.carousel-container .default-content-wrapper {
   align-items: center;
 }
 
+main .site-map-description p {
+  line-height: 18px;
+}
+
 main .section.green-box.carousel-container .default-content-wrapper p {
   padding: 0 0 10px;
   margin: 0;
@@ -444,5 +443,31 @@ main .section.green-box.carousel-container h4 {
   line-height: 24px;
   vertical-align: baseline;
   max-width: 30%;
+}
 
+main .site-map-list ul {
+  list-style: none;
+  text-decoration: underline;
+  padding: 0;
+}
+
+main .site-map-list ul li {
+  margin-bottom: 10px;
+}
+
+main .site-map-list ul li a:any-link {
+  color: var(--text-color);
+}
+
+main .site-map-list ul li:nth-child(-n + 7) a:any-link {
+  font-family: var(--sitemap-menu-font-family);
+}
+
+main .site-map-description h1, main .site-map-description h2 {
+  font-family: var(--sitemap-menu-font-family);
+}
+
+main .site-map-description ul {
+  margin: 0 20px;
+  padding: 0;
 }
