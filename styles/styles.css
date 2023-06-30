@@ -388,7 +388,7 @@ main .section {
     margin: auto;
   }
 
- 
+
 }
 
 /* section metadata */
@@ -403,6 +403,10 @@ main .section-divider {
   right: 0;
   display: block;
   box-sizing: border-box;
+}
+
+main .default-content-wrapper {
+  overflow-wrap: break-word;
 }
 
 main .section.green-box.carousel-container {
@@ -438,5 +442,5 @@ main .section.green-box.carousel-container h4 {
   line-height: 24px;
   vertical-align: baseline;
   max-width: 30%;
-  
+
 }
