@@ -163,8 +163,8 @@
   /* nav height */
   --nav-height-mobile: 66px;
   --nav-height-tablet: 66px;
-  --nav-height-laptop: 219px;
-  --nav-height-desktop: 219px;
+  --nav-height-laptop: 230px;
+  --nav-height-desktop: 230px;
   --nav-height: var(--nav-height-mobile);
 }
 
@@ -403,7 +403,7 @@ main .section-divider {
   box-sizing: border-box;
 }
 
-main .default-content-wrapper {
+main .default-content-wrapper, main .columns-wrapper {
   overflow-wrap: break-word;
 }
 
