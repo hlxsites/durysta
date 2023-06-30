@@ -163,8 +163,8 @@
   /* nav height */
   --nav-height-mobile: 66px;
   --nav-height-tablet: 66px;
-  --nav-height-laptop: 85px;
-  --nav-height-desktop: 85px;
+  --nav-height-laptop: 219px;
+  --nav-height-desktop: 219px;
   --nav-height: var(--nav-height-mobile);
 }
 
@@ -176,7 +176,7 @@
     --heading-font-size-m: 24px;
     --heading-font-size-s: 20px;
     --heading-font-size-xs: 18px;
-    --nav-height: 234.5px;
+    --nav-height: var(--nav-height-laptop);
   }
 }
 
@@ -387,8 +387,6 @@ main .section {
     max-width: 1200px;
     margin: auto;
   }
-
-
 }
 
 /* section metadata */
