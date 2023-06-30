@@ -120,6 +120,9 @@
   --faq-title-color: #fff;
   --faq-text-color: #414042;
   --faq-implant-text-color: #c4622d;
+  --list-marker-color: #c4622d;
+  --columns-button-color: #ffc107;
+  --conditions-background-color: #f4f4f4;
 
   /* fonts */
   --ff-ITCAvantGardeGothicW01: 'ITCAvantGardeGothicW01','ITCAvantGardeGothicW01-Bold-Fallback',sans-serif;
@@ -133,6 +136,7 @@
   --ff-FeltTipRomanW01-Reg: 'FeltTipRomanW01-Reg','FeltTipRomanW01-Reg-Fallback',sans-serif;
   --heading-font-family: sans-serif;
   --body-font-family: var(--ff-ITCAvantGardeGothicW01-Md);
+  --strong-font-family: var(--ff-ITCAvantGardeGothicW01-Dm);
   --heading-font-family-xxl: var(--ff-ITCAvantGardeGothicW01-Md);
   --heading-font-family-xl: var(--ff-ITCAvantGardeGothicW01-Md);
   --heading-font-family-l: var(--ff-ITCAvantGardeGothicW01-Dm);
@@ -142,6 +146,7 @@
   --ff-itc-avant-bold: var(--ff-ITCAvantGardeGothicW01-Bd);
   --faq-title-font-family: var(--ff-ITCAvantGardeGothicW01-Dm);
   --faq-link-font-family: var(--ff-ITCAvantGardeGothicW01-Bd);
+  --columns-button-family: var(--ff-ITCAvantGardeGothicW01-Bd);
   --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace;
 
   /* body sizes */
@@ -244,6 +249,10 @@ hr {
   margin-bottom: 1.5em;
   border: 0;
   border-bottom: 1px solid var(--overlay-background-color);
+}
+
+strong {
+  font-family: var(--strong-font-family);
 }
 
 code, pre, samp {
