@@ -9,6 +9,7 @@ header nav {
   height: 0;
   transition: height 1s;
   background-color: var(--header-background-color);
+
 }
 
 header nav[aria-expanded="true"] {
@@ -20,13 +21,14 @@ header .nav-wrapper {
   width: 100%;
   position: fixed;
   overflow: scroll;
+  z-index: 100;
+  top: 0;
 }
 
 /* hamburger */
 header nav .nav-hamburger {
   grid-area: hamburger;
   align-items: center;
-  position: absolute;
   position: fixed;
   display: block;
   width: 30px;
@@ -35,6 +37,7 @@ header nav .nav-hamburger {
   top: 0;
   z-index: 2;
 }
+
 
 header nav .nav-hamburger button {
   height: 22px;
@@ -108,6 +111,11 @@ header nav .nav-brand {
   position: fixed;
   width: 100%;
   z-index: 1;
+  height: var(--nav-height-mobile);
+}
+
+header nav .nav-brand p{
+  margin: 0;
 }
 
 header nav .nav-brand img {
@@ -120,34 +128,22 @@ header nav .nav-brand img {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
-  visibility: visible;
   display: block;
   background-color: var(--header-background-color);
   position: absolute;
   margin:0;
-  margin-top: 524px;
-  left: 0;
+  margin-top: 530px;
   width: 100%;
-}
-
-header nav[aria-expanded="true"] .nav-tools {
-  visibility: visible;
 }
 
 /* sections */
 header nav .nav-sections {
   grid-area: sections;
-  visibility: visible;
   background-color: var(--header-background-color);
   position: absolute;
   width: 100%;
   display: block;
-  z-index: 0;
-  margin-top: var(--nav-height-mobile);
-}
-
-header nav[aria-expanded="true"] .nav-sections {
-  visibility: visible;
+  margin-top: 70px;
 }
 
 header nav :is(.nav-sections,.nav-tools) ul {
@@ -218,7 +214,7 @@ header nav :is(.nav-sections,.nav-tools) ul li a br::after {
 /* laptop break point */
 @media (min-width: 992px) {
   header .nav-wrapper {
-    height: 230px;
+    height: var(--nav-height-laptop);
     position: relative;
   }
 
@@ -370,7 +366,7 @@ header nav :is(.nav-sections,.nav-tools) ul li a br::after {
   }
 
   header .nav-wrapper {
-    height: 230px;
+    height: var(--nav-height-desktop);
   }
 
   header nav .nav-brand {
