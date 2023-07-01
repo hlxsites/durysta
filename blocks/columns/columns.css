@@ -85,7 +85,7 @@
 }
 
 .columns .columns-col:has(h6) p {
-  margin: 0px;
+  margin: 0;
 }
 
 .columns h6 {
@@ -109,14 +109,14 @@
 
 .columns .columns-single h6 {
   right: 105px;
-  bottom: 0px;
+  bottom: 0;
   margin-bottom: 14px;
 }
 
 .columns .columns-right h6 {
   width: 65%;
   bottom: 18px;
-  right: 0px;
+  right: 0;
   margin: auto;
 }
 
@@ -132,7 +132,7 @@
     font-size: var(--body-font-size-xs);
     width: 100%;
     text-align: center;
-    right: 0px;
+    right: 0;
   }
 
   .columns .columns-right h6 {
@@ -148,7 +148,7 @@
   background-color: var(--columns-button-color);
   color: var(--text-color);
   padding: 15px 40px;
-  margin: 0px;
+  margin: 0;
   text-transform: uppercase;
 }
 
@@ -167,7 +167,7 @@
 }
 
 .section.treat-talk .columns h1 {
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .section.treat-talk .columns h3 {
@@ -176,7 +176,7 @@
 }
 
 .section.treat-talk .columns p {
-  margin-top: 0px;
+  margin-top: 0;
   margin-bottom: 12px;
 }
 
@@ -191,7 +191,7 @@
 }
 
 .section.treat-talk .columns .columns-right h2 {
-  margin-top: 0px;
+  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -230,7 +230,7 @@
 }
 
 .section.saving-program .columns .columns-row {
-  width: 75%;
+  width: 100%;
   align-items: start;
   margin-left: auto;
   margin-right: auto;
@@ -251,17 +251,12 @@
 }
 
 .section.saving-program .columns .columns-right h3 {
-  margin-top: 0px;
+  margin-top: 0;
   font-size: 15px;
 }
 
-.section.saving-program .columns .columns-row {
-  align-items: start;
-  width: 100%;
-}
-
 .section.saving-program {
-  margin: 0px;
+  margin: 0;
   padding: 25px 20px;
   background: var(--conditions-background-color);
 }
