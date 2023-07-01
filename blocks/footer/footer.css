@@ -31,6 +31,7 @@ footer .footer ul li a {
   font-size: 16px;
   line-height: 32px;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 footer .footer p {
