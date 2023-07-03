@@ -1,0 +1,30 @@
+@import "styles.css";
+
+.isi-content h1 {
+	font-family: var(--ff-itc-avant-bold);
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 34px;
+}
+
+.isi-content h2 {
+	font-family: var(--ff-itc-avant-bold);
+	font-size: 24px;
+	font-weight: 700;
+	margin: 0 0 5px 0;
+}
+
+.isi-content p,
+.isi-content li {
+	line-height: 1.2;
+	margin: 0 0 14px 0;
+}
+
+.isi-content ul {
+	padding-inline-start: 20px;
+}
+
+.isi-content a:any-link {
+	color: var(--text-color);
+	text-decoration: underline;
+}
