@@ -49,8 +49,7 @@
   color: #414042;
 }
 
-
-// Custom placement for each heading and text
+/* Custom placement for each heading and text */
 
 .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
   top: 69%;
