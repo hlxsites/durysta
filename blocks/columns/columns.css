@@ -19,7 +19,7 @@
   display: block;
 }
 
-@media (min-width: 990px) {
+@media (min-width: 992px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
@@ -123,7 +123,7 @@
   text-align: center;
 }
 
-@media (min-width: 990px) {
+@media (min-width: 992px) {
   .columns .columns-single h6 {
     font-size: var(--body-font-size-s);
     margin-bottom: 14px;
@@ -147,7 +147,7 @@
 .columns .button-container .button.primary {
   line-height: 27px;
   font-family: var(--columns-button-family);
-  font-size: 18px;
+  font-size: var(--body-font-size-m);
   background-color: var(--columns-button-color);
   color: var(--text-color);
   padding: 15px 40px;
@@ -170,12 +170,23 @@
 }
 
 .section.treat-talk .columns h1 {
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.section.treat-talk .columns h2 {
+  font-size: 21px;
   margin-top: 0;
 }
 
 .section.treat-talk .columns h3 {
+  font-size: 20px;
   margin-top: 15px;
-  margin-bottom: 34px;
+  margin-bottom: 20px;
+}
+
+.section.treat-talk .columns p, li {
+  font-size: 16px;
 }
 
 .section.treat-talk .columns p {
@@ -194,7 +205,6 @@
 }
 
 .section.treat-talk .columns .columns-right h2 {
-  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -213,18 +223,18 @@
   margin-right: auto;
 }
 
-@media (max-width: 990px) {
+@media (min-width: 992px) {
   .section.treat-talk .columns h1 {
-    font-size: 30px;
+    font-size: var(--heading-font-size-xxl);
   }
 
   .section.treat-talk .columns h2 {
-    font-size: 21px;
+    font-size: var(--heading-font-size-xl);
   }
 
   .section.treat-talk .columns h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: var(--heading-font-size-l);
+    margin-bottom: 34px;
   }
 
   .section.treat-talk .columns p, li {
@@ -265,7 +275,7 @@
 }
 
 .section.saving-program .default-content-wrapper {
-  font-size: 12px;
+  font-size: var(--body-font-size-xxxs);
   line-height: 14px;
   color: var(--text-color);
 }
@@ -279,7 +289,7 @@
   font-size: 14px;
 }
 
-@media (min-width: 990px) {
+@media (min-width: 992px) {
   .section.saving-program .columns .columns-left img {
     margin-left: auto;
     margin-right: auto;
