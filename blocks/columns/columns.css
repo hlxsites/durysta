@@ -310,10 +310,7 @@
 
   .section.saving-program {
     margin: auto;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 0px;
-    padding-top: 0px;
+    padding: 0 24px;
     max-width: 1200px;
     background: var(--conditions-background-color);
     background-clip: content-box;
