@@ -152,6 +152,7 @@
   --body-font-size-xs: 14px;
   --body-font-size-xxs: 12.992px;
   --body-font-size-undefined: 12px;
+  --body-line-height: 1.25;
 
   /* heading sizes */
   --heading-font-size-xxl: 40px;
@@ -182,8 +183,9 @@
 }
 
 @media (min-width: 767px) {
-    :root {
-      --body-font-size-s: 18px;
+  :root {
+    --body-font-size-s: 18px;
+    --body-line-height: 1.33;
   }
 }
 
@@ -191,7 +193,7 @@ body {
   font-size: var(--body-font-size-s);
   margin: 0;
   font-family: var(--body-font-family);
-  line-height: 1.2;
+  line-height: var(--body-line-height);
   color: var(--text-color);
   background-color: var(--background-color);
   display: none;
