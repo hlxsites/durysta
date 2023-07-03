@@ -1,0 +1,86 @@
+
+.scroll-animation {
+  display: block;
+  height: calc(100vh * var(--scroll-animation-items, 1));
+}
+
+.scroll-animation .scroll-animation-container {
+  position: sticky;
+  height: 100vh;
+  top: 0px;
+  display: grid;
+  overflow: hidden;
+}
+
+.scroll-animation .scroll-animation-image {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  z-index: 1;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.scroll-animation .scroll-animation-body {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.scroll-animation .scroll-animation-heading {
+  position: absolute;
+  z-index: 2;
+  background-color: #00806e;
+  color: #ffffff;
+  border-radius: 12rem;
+  padding: 0.7rem 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.scroll-animation .scroll-animation-text {
+  position: absolute;
+  z-index: 2;
+  transition: ease-in-out 500ms;
+  text-align: left;
+  padding: initial;
+  font-size: 18px;
+  color: #414042;
+}
+
+
+// Custom placement for each heading and text
+
+.scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
+  top: 69%;
+  left: 22%;
+}
+
+.scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
+  top: 53%;
+  left: 7%;
+  width: 180px;
+}
+
+.scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
+  top: 14%;
+  left: 69%;
+}
+
+.scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
+  top: 12%;
+  left: 76%;
+  width: 230px;
+}
+
+.scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
+  top: 74%;
+  left: 76%;
+}
+
+.scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
+  top: 73%;
+  left: 83%;
+  width: 155px;
+}
