@@ -214,6 +214,7 @@ header nav :is(.nav-sections,.nav-tools) ul li a br::after {
 /* laptop break point */
 @media (min-width: 992px) {
   header .nav-wrapper {
+    overflow: auto;
     height: var(--nav-height-laptop);
     position: relative;
   }
@@ -283,7 +284,7 @@ header nav :is(.nav-sections,.nav-tools) ul li a br::after {
   }
 
   header nav .nav-sections {
-    margin-top: 151px;
+    margin-top: 157px;
     background-color: var(--header-background-color);
     position: absolute;
     left: 0;
@@ -377,7 +378,7 @@ header nav :is(.nav-sections,.nav-tools) ul li a br::after {
   }
 
   header nav .nav-sections {
-    margin-top: 157px;
+    margin-top: 142px;
   }
 
   header nav .nav-tools ul li:first-child, header nav .nav-tools ul li a {
