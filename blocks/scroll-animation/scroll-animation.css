@@ -1,15 +1,31 @@
 
 .scroll-animation {
   display: block;
-  height: calc(100vh * var(--scroll-animation-items, 1));
+  height: calc(554px * var(--scroll-animation-items, 1));
 }
 
 .scroll-animation .scroll-animation-container {
   position: sticky;
-  height: 100vh;
+  height: 554px;
   top: 0px;
   display: grid;
   overflow: hidden;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1)}
+  50% { transform: scale(1.1)}
+  100% { transform: scale(1)}
+}
+
+.scroll-animation .scroll-animation-scroll-icon {
+  background-image: url("/icons/scroll.jpg");
+  width: 58px;
+  height: 102px;
+  position: absolute;
+  top: 25%;
+  left: 20px;
+  animation: pulse 1s infinite;
 }
 
 .scroll-animation .scroll-animation-image {

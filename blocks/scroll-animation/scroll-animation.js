@@ -18,8 +18,13 @@ export default function decorate(block) {
       container.append(cell);
     });
   });
-  
+
+  const scrollIcon = document.createElement('div');
+  scrollIcon.className = 'scroll-animation-scroll-icon';
+  container.append(scrollIcon);
+
   container.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   block.textContent = '';
+
   block.append(container);
 }
