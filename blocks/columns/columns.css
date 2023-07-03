@@ -270,7 +270,7 @@
 
 .section.saving-program {
   margin: 0;
-  padding: 25px 20px;
+  padding: 25px 25px 20px;
   background: var(--conditions-background-color);
 }
 
@@ -312,13 +312,24 @@
     margin: auto;
     padding-left: 24px;
     padding-right: 24px;
+    padding-bottom: 0px;
+    padding-top: 0px;
     max-width: 1200px;
     background: var(--conditions-background-color);
     background-clip: content-box;
   }
 
   .section.saving-program > div {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 25px;
+    padding-right: 20px;
+  }
+
+  .section.saving-program > div:first-of-type {
+    padding-left: 20px;
+    padding-top: 30px;
+  }
+
+  .section.saving-program > div:last-of-type {
+    padding-bottom: 10px;
   }
 }
