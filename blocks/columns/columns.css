@@ -299,14 +299,16 @@
   }
 
   .section.saving-program {
-    margin: 64px 32px;
-    background: var(--background-color);
+    margin: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: 1200px;
+    background: var(--conditions-background-color);
+    background-clip: content-box;
   }
 
-  .section.saving-program div {
-    margin: auto;
-    max-width: 1200px;
-    padding: 30px 15px 15px;
-    background: var(--conditions-background-color);
+  .section.saving-program > div {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
