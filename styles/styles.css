@@ -394,7 +394,7 @@ main .section.highlight {
 }
 
 main .section-divider {
-  border-top: 5px solid var(--clr-green);
+  border-top: 10px solid var(--clr-green);
   position: absolute;
   left: 0;
   right: 0;
