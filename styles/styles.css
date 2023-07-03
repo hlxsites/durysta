@@ -97,7 +97,7 @@
 
 :root {
   /* colors */
-  --text-color: #212529;
+  --text-color: #414042;
   --link-color: #007bff;
   --link-hover-color: #007bff;
   --background-color: #fff;
@@ -237,6 +237,10 @@ h6 { font-size: var(--heading-font-size-xs) }
 p, dl, ol, ul, pre, blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
+}
+
+strong {
+    font-family: var(--ff-itc-avant-bold);
 }
 
 hr {
