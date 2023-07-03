@@ -92,7 +92,7 @@
   font-family: var(--body-font-family);
   font-weight: 400;
   line-height: 1.6;
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-xs);
   color: var(--background-color);
   scroll-margin: 0;
   position: absolute;
@@ -108,36 +108,39 @@
 }
 
 .columns .columns-single h6 {
-  right: 105px;
+  margin-bottom: 8px;
   bottom: 0;
-  margin-bottom: 14px;
+  width: 100%;
+  text-align: center;
+  right: 0;
 }
 
 .columns .columns-right h6 {
-  width: 65%;
-  bottom: 18px;
-  right: 0;
+  bottom: 8px;
+  width: 80%;
   margin: auto;
+  right: 0;
+  text-align: center;
 }
 
-@media (max-width: 1200px) {
-  .columns .columns-right h6 {
-    width: 80%;
-  }
-}
-
-@media (max-width: 767px) {
+@media (min-width: 990px) {
   .columns .columns-single h6 {
-    margin-bottom: 8px;
-    font-size: var(--body-font-size-xs);
-    width: 100%;
-    text-align: center;
-    right: 0;
+    font-size: var(--body-font-size-s);
+    margin-bottom: 14px;
+    text-align: right;
+    right: 105px;
   }
 
   .columns .columns-right h6 {
-    font-size: var(--body-font-size-xs);
-    bottom: 8px;
+    font-size: var(--body-font-size-s);
+    bottom: 18px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .columns .columns-right h6 {
+    width: 65%;
   }
 }
 
@@ -297,6 +300,13 @@
 
   .section.saving-program {
     margin: 64px 32px;
+    background: var(--background-color);
+  }
+
+  .section.saving-program div {
+    margin: auto;
+    max-width: 1200px;
     padding: 30px 15px 15px;
+    background: var(--conditions-background-color);
   }
 }
