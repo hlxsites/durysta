@@ -102,15 +102,16 @@
   --link-hover-color: #414042;
   --background-color: #fff;
   --clr-green: #00806e;
+  --clr-yellow: #ffc60b;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --header-background-color: var(--clr-green);
-  --header-hover-background-color: #ffc60b;
+  --header-hover-background-color: var(--clr-yellow);
   --header-text-color: #fff;
   --header-text-hover-color: #414042;
   --header-find-doctor-color: #000;
   --header-tools-text-color: #414042;
-  --header-hamburger-color: var(--clr-green);;
+  --header-hamburger-color: var(--clr-green);
   --footer-background-color: var(--clr-green);
   --footer-text-color: #fff;
   --heading-text-color-xxl: var(--clr-green);
@@ -120,6 +121,7 @@
   --faq-title-color: #fff;
   --faq-text-color: #414042;
   --faq-implant-text-color: #c4622d;
+  --scrollbar-track-color: #ddd;
 
   /* fonts */
   --ff-ITCAvantGardeGothicW01: 'ITCAvantGardeGothicW01','ITCAvantGardeGothicW01-Bold-Fallback',sans-serif;
@@ -141,6 +143,7 @@
   --isi-title-font-family: var(--ff-ITCAvantGardeGothicW01-Bd);
   --find-doctor-font-family: var(--ff-ITCAvantGardeGothicW01-Bd);
   --ff-itc-avant-bold: var(--ff-ITCAvantGardeGothicW01-Bd);
+  --ff-itc-avant-md: var(--ff-ITCAvantGardeGothicW01-Md);
   --faq-title-font-family: var(--ff-ITCAvantGardeGothicW01-Dm);
   --faq-link-font-family: var(--ff-ITCAvantGardeGothicW01-Bd);
   --sitemap-menu-font-family: var(--ff-ITCAvantGardeGothicW01-Bd);
@@ -170,6 +173,12 @@
   --nav-height-desktop: 215px;
   --nav-height-hd: 230px;
   --nav-height: var(--nav-height-mobile);
+
+  /* content width */
+  --content-max-width: 1200px;
+
+  /* scrollbar */
+  --scrollbar-width: 10px;
 }
 
 @media (min-width: 990px) {
@@ -322,7 +331,7 @@ button:disabled, button:disabled:hover {
 a.button.secondary, button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
-  color: var(--text-color)
+  color: var(--text-color);
 }
 
 main input {
