@@ -1,10 +1,31 @@
 import { createOptimizedPicture } from '../../scripts/lib-franklin.js';
 
+function trackScroll(block, itemsCount) {
+  const element = document.querySelector('.scroll-animation'); 
+  let lastSlideIndex = 0;
+  block.dataset.currentIndex = 0;
+
+  document.addEventListener("scroll", (event) => {
+    const rect = element.getBoundingClientRect();
+    const slideIndex = Math.ceil(
+      Math.max(0, Math.min(itemsCount - 1, 
+        itemsCount * -1 * rect.top / rect.height
+      ))
+    );
+
+    if(lastSlideIndex !== slideIndex) {
+      block.dataset.currentIndex = slideIndex;
+      lastSlideIndex = slideIndex;
+    }
+  });
+}
+
 export default function decorate(block) {
 
   const container = document.createElement('div');
-  container.className = 'scroll-animation-container';
-  block.style.setProperty('--scroll-animation-items', block.children.length);
+  container.className = 'scroll-animation-window';
+  const itemsCount = block.children.length;
+  block.style.setProperty('--scroll-animation-items', itemsCount);
 
   [...block.children].forEach((row, rowIndex) => {
     [...row.children].forEach((cell, colIndex) => {
@@ -27,4 +48,5 @@ export default function decorate(block) {
   block.textContent = '';
 
   block.append(container);
+  trackScroll(block, itemsCount);
 }
