@@ -1,5 +1,3 @@
-@import "styles.css";
-
 .isi-content h1 {
 	font-family: var(--isi-title-font-family);
 	font-size: 32px;
@@ -11,12 +9,12 @@
 	font-family: var(--isi-title-font-family);
 	font-size: 24px;
 	font-weight: 700;
-	margin: 0 0 5px 0;
+	margin: 0 0 5px;
 }
 
 .isi-content p,
 .isi-content li {
-	margin: 0 0 14px 0;
+	margin: 0 0 14px;
 }
 
 .isi-content ul {
