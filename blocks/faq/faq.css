@@ -24,17 +24,23 @@
 .faq .faq-header .faq-button {
   margin: auto;
   margin-right: 10px;
+  position: relative;
 }
 
 .faq .faq-button::before {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-58%);
   content: "+";
   text-align: right;
   font-size: 35px;
-  line-height: 15px;
 }
 
 .faq div[faq-expanded="true"] .faq-button::before {
   content: "-";
+  font-size: 52px;
+  transform: translateY(-56%);
 }
 
 .faq .faq-body {
@@ -131,10 +137,12 @@
 
   .faq .faq-button::before {
     font-size: 48px;
+    transform: translateY(-58%);
   }
 
   .faq div[faq-expanded="true"] .faq-button::before {
     font-size: 72px;
+    transform: translateY(-56%);
   }
 
   .faq .faq-body {

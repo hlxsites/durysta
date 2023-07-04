@@ -170,8 +170,9 @@
   /* nav height */
   --nav-height-mobile: 66px;
   --nav-height-tablet: 66px;
-  --nav-height-laptop: 230px;
-  --nav-height-desktop: 230px;
+  --nav-height-laptop: 225px;
+  --nav-height-desktop: 215px;
+  --nav-height-hd: 230px;
   --nav-height: var(--nav-height-mobile);
 }
 
@@ -398,13 +399,27 @@ main .section {
   }
 }
 
+/* desktop break point */
+@media (min-width: 1200px) {
+  :root {
+    --nav-height: var(--nav-height-desktop);
+  }
+}
+
+/* hd break point */
+@media (min-width: 1366px) {
+  :root {
+    --nav-height: var(--nav-height-hd);
+  }
+}
+
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
 }
 
 main .section-divider {
-  border-top: 5px solid var(--clr-green);
+  border-top: 10px solid var(--clr-green);
   position: absolute;
   left: 0;
   right: 0;
