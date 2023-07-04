@@ -157,20 +157,10 @@
   }
 }
 
-@media (min-width: 1221px) {
+@media (min-width: 1200px) {
   .isi-title-inner,
   .isi-content-inner {
     padding-right: 0;
     padding-left: 0;
-  }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (min-resolution: 1dppx) {
-  .isi-content-inner {
-    max-height: 123px;
-  }
-
-  .isi .isi-title {
-    font-size: 16px;
   }
 }
