@@ -38,9 +38,19 @@
   margin-right: auto;
 }
 
-.resource-faq .columns > div > .columns-img-col img  {
+.resource-faq .columns > div {
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .resource-faq .columns > div  {
+    align-items: flex-start;
+  }
+}
+
+.resource-faq .columns > div img  {
   width: auto;
-  height: auto;
+  height: 298px;
   margin-left: auto;
   margin-right: auto;
 }
