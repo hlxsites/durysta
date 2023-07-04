@@ -296,11 +296,11 @@
 }
 
 @media (min-width: 992px) {
-  .section.treat-talk .columns .columns-col.columns-middle {
+  .section.treat-talk .columns .columns-middle {
     max-width: 5px;
   }
 
-  .section.treat-talk .columns .columns-col.columns-middle img {
+  .section.treat-talk .columns .columns-middle img {
     position: absolute;
     max-width: 408px;
     transform: translateX(-50%) rotate(90deg) translateX(50%) translateY(-60px);
