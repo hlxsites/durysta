@@ -8,7 +8,7 @@
   transition: transform 0.35s ease-out;
 }
 
-.isi--visible {
+.is-isi-visible {
   transform: translateY(0);
 }
 
@@ -16,7 +16,7 @@
   display: flex; /* avoid margin collapse */
 }
 
-.isi .isi__title {
+.isi .isi-title {
   margin: 0;
   padding: 16px 0;
   font-size: 16px;
@@ -24,39 +24,39 @@
   color: var(--header-text-color);
 }
 
-.isi__title-container {
+.isi-title-container {
   background-color: var(--clr-green);
 }
 
-.isi__content-container {
+.isi-content-container {
   display: grid;
   grid-template-rows: 1fr;
   background-color: var(--background-color);
   transition: grid-template-rows 0.35s ease-out;
 }
 
-.isi__content-container[aria-hidden='true'] {
+.isi-content-container[aria-hidden='true'] {
   grid-template-rows: 0fr;
 }
 
-.isi__title-inner,
-.isi__content-wrap {
+.isi-title-inner,
+.isi-content-wrap {
   max-width: var(--content-max-width);
   margin: 0 auto;
 }
 
-.isi__title-inner {
+.isi-title-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
 }
 
-.isi__content-wrap {
+.isi-content-wrap {
   grid-row: 1 / span 2; /* needed to make sure the child animates at the same speed as the parent */
 }
 
-.isi__content-inner {
+.isi-content-inner {
   box-sizing: border-box;
   overflow-y: auto;
   max-height: 84px;
@@ -64,19 +64,19 @@
   padding: 0 30px 20px 20px;
 }
 
-.isi__content-inner::-webkit-scrollbar {
+.isi-content-inner::-webkit-scrollbar {
   width: var(--scrollbar-width);
 }
 
-.isi__content-inner::-webkit-scrollbar-thumb {
+.isi-content-inner::-webkit-scrollbar-thumb {
   background-color: var(--clr-green);
 }
 
-.isi__content-inner::-webkit-scrollbar-track {
+.isi-content-inner::-webkit-scrollbar-track {
   background-color: var(--scrollbar-track-color);
 }
 
-.isi__toggle {
+.isi-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,12 +94,12 @@
   text-transform: uppercase;
 }
 
-.isi__toggle:hover,
-.isi__toggle:focus {
+.isi-toggle:hover,
+.isi-toggle:focus {
   background: none;
 }
 
-.isi__toggle::after {
+.isi-toggle::after {
   content: '-';
   display: block;
   margin-top: -4px; /* fix the vertical alignment issue caused by the font */
@@ -109,68 +109,68 @@
   line-height: 52px;
 }
 
-.isi__toggle[aria-expanded='false']::after {
+.isi-toggle[aria-expanded='false']::after {
   content: '+';
   font-size: 52px;
 }
 
-.isi__toggle-label {
+.isi-toggle-label {
   display: none;
 }
 
 @media (min-width: 768px) {
-  .isi__content-inner {
+  .isi-content-inner {
     max-height: 100px;
     padding-right: 40px;
   }
 
-  .isi__toggle {
+  .isi-toggle {
     min-width: 167px;
     min-height: 44px;
     border-left: 3px solid var(--clr-yellow);
     font-family: var(--ff-itc-avant-md);
   }
 
-  .isi__toggle::after {
+  .isi-toggle::after {
     font-family: inherit;
     font-size: 42px;
   }
 
-  .isi__toggle[aria-expanded='false']::after {
+  .isi-toggle[aria-expanded='false']::after {
     font-size: 25px;
   }
 
-  .isi__toggle-label {
+  .isi-toggle-label {
     display: block;
   }
 }
 
 @media (min-width: 992px) {
-  .isi__title-inner,
-  .isi__content-inner {
+  .isi-title-inner,
+  .isi-content-inner {
     padding-right: 35px;
     padding-left: 35px;
   }
 
-  .isi .isi__title {
+  .isi .isi-title {
     font-size: 18px;
   }
 }
 
 @media (min-width: 1221px) {
-  .isi__title-inner,
-  .isi__content-inner {
+  .isi-title-inner,
+  .isi-content-inner {
     padding-right: 0;
     padding-left: 0;
   }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
-  .isi__content-inner {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (min-resolution: 1dppx) {
+  .isi-content-inner {
     max-height: 123px;
   }
 
-  .isi .isi__title {
+  .isi .isi-title {
     font-size: 16px;
   }
 }

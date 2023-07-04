@@ -15,7 +15,10 @@ const HOOK = '[data-isi-hook]';
 function io(block, hook) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      block.classList.toggle(`${BLOCK_CLASS}--visible`, !entry.isIntersecting);
+      block.classList.toggle(
+        `is-${BLOCK_CLASS}-visible`,
+        !entry.isIntersecting,
+      );
     });
   });
 
@@ -32,7 +35,7 @@ function setExpander(title, contentContainer) {
   let isOpen = BLOCK_EXPANDER_DEFAULT_OPEN;
   const handleToggler = (e) => {
     isOpen = !isOpen;
-    e.currentTarget.querySelector(`.${BLOCK_CLASS}__toggle-label`).innerText = isOpen
+    e.currentTarget.querySelector(`.${BLOCK_CLASS}-toggle-label`).innerText = isOpen
       ? BLOCK_COLLAPSE_TEXT
       : BLOCK_EXPAND_TEXT;
     e.currentTarget.setAttribute('aria-expanded', isOpen);
@@ -49,13 +52,13 @@ function setExpander(title, contentContainer) {
   return button(
     {
       type: 'button',
-      class: `${BLOCK_CLASS}__toggle`,
+      class: `${BLOCK_CLASS}-toggle`,
       'aria-expanded': true,
       'aria-controls': contentContainer.id,
       onClick: handleToggler,
     },
     span(
-      { class: `${BLOCK_CLASS}__toggle-label` },
+      { class: `${BLOCK_CLASS}-toggle-label` },
       BLOCK_EXPANDER_DEFAULT_OPEN ? BLOCK_COLLAPSE_TEXT : BLOCK_EXPAND_TEXT,
     ),
   );
@@ -71,15 +74,15 @@ function render(block) {
   const title = titleInner.querySelector(':scope > *');
   const contentContainer = block.querySelector(':scope > div:last-child');
   const contentWrap = contentContainer.querySelector(':scope > div');
-  const contentInner = div({ class: `${BLOCK_CLASS}__content-inner` });
+  const contentInner = div({ class: `${BLOCK_CLASS}-content-inner` });
   const expanderButton = setExpander(title, contentContainer);
 
-  titleContainer.classList.add(`${BLOCK_CLASS}__title-container`);
-  titleInner.classList.add(`${BLOCK_CLASS}__title-inner`);
-  title.classList.add(`${BLOCK_CLASS}__title`);
-  contentContainer.classList.add(`${BLOCK_CLASS}__content-container`);
+  titleContainer.classList.add(`${BLOCK_CLASS}-title-container`);
+  titleInner.classList.add(`${BLOCK_CLASS}-title-inner`);
+  title.classList.add(`${BLOCK_CLASS}-title`);
+  contentContainer.classList.add(`${BLOCK_CLASS}-content-container`);
   contentContainer.id = `${BLOCK_CLASS}-content`;
-  contentWrap.classList.add(`${BLOCK_CLASS}__content-wrap`);
+  contentWrap.classList.add(`${BLOCK_CLASS}-content-wrap`);
 
   titleInner.append(expanderButton);
   contentInner.append(...contentWrap.childNodes);
