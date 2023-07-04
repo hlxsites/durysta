@@ -101,6 +101,10 @@
   z-index: 1;
 }
 
+.columns h3 {
+  margin-top: 0;
+}
+
 .columns h6 strong {
   font-family: var(--body-font-family);
   font-weight: 400;
@@ -154,7 +158,6 @@
   margin: 0;
   text-transform: uppercase;
 }
-
 
 section.resource-faq .columns {
   max-width: 770px;
@@ -259,13 +262,13 @@ section.resource-faq .columns p {
   margin-right: auto;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .section.treat-talk .columns h1 {
     font-size: var(--heading-font-size-xxl);
   }
 
   .section.treat-talk .columns h2 {
-    font-size: var(--heading-font-size-xl);
+    font-size: var(--heading-font-size-l);
   }
 
   .section.treat-talk .columns h3 {
@@ -274,7 +277,7 @@ section.resource-faq .columns p {
   }
 
   .section.treat-talk .columns p, li {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
