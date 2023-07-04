@@ -1,27 +1,41 @@
 import { createOptimizedPicture } from '../../scripts/lib-franklin.js';
 
 function trackScroll(block, itemsCount) {
-  const element = document.querySelector('.scroll-animation'); 
-  let lastSlideIndex = 0;
+  const slides = block.querySelectorAll('[data-index]');
+  let lastSlideIndex = -1;
   block.dataset.currentIndex = 0;
 
-  document.addEventListener("scroll", (event) => {
-    const rect = element.getBoundingClientRect();
+  const scrollHandler = () => {
+    const rect = block.getBoundingClientRect();
     const slideIndex = Math.ceil(
       Math.max(0, Math.min(itemsCount - 1, 
         itemsCount * -1 * rect.top / rect.height
       ))
     );
-
     if(lastSlideIndex !== slideIndex) {
       block.dataset.currentIndex = slideIndex;
+      slides.forEach((slide) => slide.dataset.active = (slide.dataset.index === `${slideIndex}`));
       lastSlideIndex = slideIndex;
     }
+  }
+
+  document.addEventListener("scroll", scrollHandler);
+  window.requestAnimationFrame(scrollHandler)
+}
+
+function addClickHandlers(block, itemsCount) {
+  block.addEventListener('click', (event) => {
+    const target = event.target.closest('.scroll-animation-heading');
+    if (!target) return;
+    const index = Number(target.closest('[data-index]').dataset.index);
+    if (isNaN(index)) return;
+    const rect = block.getBoundingClientRect();
+    const offset = rect.top + (index - 1 ) * (rect.height / itemsCount) + document.documentElement.scrollTop + 1;
+    window.scrollTo({ top: offset, behavior: 'instant' });
   });
 }
 
 export default function decorate(block) {
-
   const container = document.createElement('div');
   container.className = 'scroll-animation-window';
   const itemsCount = block.children.length;
@@ -49,4 +63,5 @@ export default function decorate(block) {
 
   block.append(container);
   trackScroll(block, itemsCount);
+  addClickHandlers(block, itemsCount);
 }

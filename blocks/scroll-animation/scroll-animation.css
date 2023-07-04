@@ -1,21 +1,21 @@
-
-.scroll-animation {
-  display: block;
-  height: calc(554px * var(--scroll-animation-items, 1));
-}
-
-.scroll-animation .scroll-animation-window {
-  position: sticky;
-  height: 554px;
-  top: 0px;
-  display: grid;
-  overflow: hidden;
-}
-
 @keyframes pulse {
   0% { transform: scale(1)}
   50% { transform: scale(1.1)}
   100% { transform: scale(1)}
+}
+
+.scroll-animation {
+  --scroll-animation-height: 554px;
+  display: block;
+  height: calc(var(--scroll-animation-height) * var(--scroll-animation-items, 1));
+}
+
+.scroll-animation .scroll-animation-window {
+  position: sticky;
+  height: var(--scroll-animation-height);
+  top: 0px;
+  display: grid;
+  overflow: hidden;
 }
 
 .scroll-animation .scroll-animation-scroll-icon {
@@ -26,6 +26,8 @@
   top: 25%;
   left: 20px;
   animation: pulse 1s infinite;
+  opacity: 0;
+  transition: ease-in-out 300ms;
 }
 
 .scroll-animation .scroll-animation-image {
@@ -36,7 +38,7 @@
   grid-row: 1;
   grid-column: 1;
   opacity: 0;
-  transition: ease-in-out 500ms;
+  transition: linear 300ms;
 }
 
 .scroll-animation .scroll-animation-body {
@@ -60,29 +62,33 @@
 .scroll-animation .scroll-animation-text {
   position: absolute;
   z-index: 2;
-  transition: ease-in-out 500ms;
   text-align: left;
   padding: initial;
   font-size: 18px;
   color: #414042;
   opacity: 0;
+  transition: ease-in-out 500ms;
 }
 
-.scroll-animation .scroll-animation-image[data-index="0"] {
+.scroll-animation[data-current-index="0"] .scroll-animation-scroll-icon,
+.scroll-animation[data-current-index="3"] .scroll-animation-scroll-icon {
   opacity: 1;
 }
 
-.scroll-animation[data-current-index="0"] .scroll-animation-image[data-index="0"],
-.scroll-animation[data-current-index="0"] .scroll-animation-body[data-index="0"] .scroll-animation-text,
-.scroll-animation[data-current-index="1"] .scroll-animation-image[data-index="1"],
-.scroll-animation[data-current-index="1"] .scroll-animation-body[data-index="1"] .scroll-animation-text,
-.scroll-animation[data-current-index="2"] .scroll-animation-image[data-index="2"],
-.scroll-animation[data-current-index="2"] .scroll-animation-body[data-index="2"] .scroll-animation-text,
-.scroll-animation[data-current-index="3"] .scroll-animation-image[data-index="3"],
-.scroll-animation[data-current-index="3"] .scroll-animation-body[data-index="3"] .scroll-animation-text{
+.scroll-animation .scroll-animation-image[data-active="true"],
+.scroll-animation .scroll-animation-body[data-active="true"] .scroll-animation-text{
   opacity: 1;
 }
 
+.scroll-animation .scroll-animation-body[data-active="true"] .scroll-animation-heading {
+  color: #fff;
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url("/icons/desktop_eye_circle_active.png");
+  margin: -0.3rem -1.6rem;
+  padding: 2.3rem 2.6rem;
+}
 
 /* Custom placement for each heading and text */
 
