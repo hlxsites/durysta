@@ -164,8 +164,9 @@
   /* nav height */
   --nav-height-mobile: 66px;
   --nav-height-tablet: 66px;
-  --nav-height-laptop: 230px;
-  --nav-height-desktop: 230px;
+  --nav-height-laptop: 225px;
+  --nav-height-desktop: 215px;
+  --nav-height-hd: 230px;
   --nav-height: var(--nav-height-mobile);
 }
 
@@ -385,6 +386,20 @@ main .section {
   .section > div {
     max-width: 1200px;
     margin: auto;
+  }
+}
+
+/* desktop break point */
+@media (min-width: 1200px) {
+  :root {
+    --nav-height: var(--nav-height-desktop);
+  }
+}
+
+/* hd break point */
+@media (min-width: 1366px) {
+  :root {
+    --nav-height: var(--nav-height-hd);
   }
 }
 
