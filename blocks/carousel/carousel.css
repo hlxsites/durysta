@@ -107,7 +107,7 @@ main .carousel-dot-button {
   border-radius: 50%;
   padding: 0;
   cursor: pointer;
-  box-shadow: 3px -2px 6px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px -2px 6px 2px rgb(0 0 0 / 20%);
 }
 
 main .carousel-dot-button.selected {
@@ -164,11 +164,7 @@ main .section.green-box.carousel-container {
   border-bottom-right-radius: 24px;
   color: #fff;
   text-align: center;
-  box-shadow: 19px 5px 16px -13px rgba(0, 0, 0, 0.48);
-}
-
-main .section.green-box.carousel-container .carousel {
-  margin-bottom: 50px;
+  box-shadow: 19px 5px 16px -13px rgb(0 0 0 / 48%);
 }
 
 main .section.green-box.carousel-container .carousel {
@@ -309,10 +305,6 @@ main .section.green-box.carousel-container .carousel-dot-button {
     margin-bottom: 120px;
   }
 
-  main .section.green-box.carousel-container .carousel {
-    margin-bottom: 100px;
-  }
-
   main .section.green-box.carousel-container .default-content-wrapper {
     padding: 35px 0 25px;
   }
@@ -361,13 +353,13 @@ main .section.green-box.carousel-container .carousel-dot-button {
 
   /* Green Box Carousel */
 
-  main .section.green-box.carousel-container .default-content-wrapper p br,
-  main .section.green-box.carousel-container h4 br {
+  main .section.green-box.carousel-container h4 br,
+  main .section.green-box.carousel-container .default-content-wrapper p br {
     content: ''; /* remove the new line, but keep it visible - the result will be collapsed lines, with no space (fix below) */
   }
 
-  main .section.green-box.carousel-container .default-content-wrapper p br::after,
-  main .section.green-box.carousel-container h4 br::after {
+  main .section.green-box.carousel-container h4 br::after,
+  main .section.green-box.carousel-container .default-content-wrapper p br::after {
     content: ' '; /* add a space between the collapsed lines */
   }
 }
