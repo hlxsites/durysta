@@ -32,6 +32,14 @@
   }
 }
 
+.section.columns-slide-image-from-left {
+  overflow: hidden;
+}
+
+.section.columns-slide-image-from-right {
+  overflow: hidden;
+}
+
 .section.columns-slide-image-from-left
   .columns
   :is(.columns-left, .columns-single)
