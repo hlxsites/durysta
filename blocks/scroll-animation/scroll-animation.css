@@ -35,15 +35,13 @@
   justify-items: center;
   align-items: center;
   z-index: 1;
-  grid-row: 1;
-  grid-column: 1;
+  grid-area: 1 / 1;
   opacity: 0;
-  transition: linear 300ms;
+  transition: ease-in-out 300ms;
 }
 
 .scroll-animation .scroll-animation-body {
-  grid-row: 1;
-  grid-column: 1;
+  grid-area: 1 / 1;
 }
 
 .scroll-animation .scroll-animation-heading {
@@ -75,12 +73,13 @@
   opacity: 1;
 }
 
-.scroll-animation .scroll-animation-image[data-active="true"],
-.scroll-animation .scroll-animation-body[data-active="true"] .scroll-animation-text{
+.scroll-animation .scroll-animation-image[data-status="behind"],
+.scroll-animation .scroll-animation-image[data-status="active"],
+.scroll-animation .scroll-animation-body[data-status="active"] .scroll-animation-text{
   opacity: 1;
 }
 
-.scroll-animation .scroll-animation-body[data-active="true"] .scroll-animation-heading {
+.scroll-animation .scroll-animation-body[data-status="active"] .scroll-animation-heading {
   color: #fff;
   background-position: center;
   background-color: transparent;

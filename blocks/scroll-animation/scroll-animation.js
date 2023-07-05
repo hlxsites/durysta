@@ -8,13 +8,18 @@ function trackScroll(block, itemsCount) {
   const scrollHandler = () => {
     const rect = block.getBoundingClientRect();
     const slideIndex = Math.ceil(
-      Math.max(0, Math.min(itemsCount - 1, 
+      Math.max(0, Math.min(itemsCount, 
         itemsCount * -1 * rect.top / rect.height
       ))
     );
     if(lastSlideIndex !== slideIndex) {
       block.dataset.currentIndex = slideIndex;
-      slides.forEach((slide) => slide.dataset.active = (slide.dataset.index === `${slideIndex}`));
+      slides.forEach((slide) => {
+        const index = Number(slide.dataset.index);
+        if (index < slideIndex) slide.dataset.status = 'behind';
+        if (index === slideIndex) slide.dataset.status = 'active';
+        if (index > slideIndex) slide.dataset.status = 'hidden';
+      });
       lastSlideIndex = slideIndex;
     }
   }
