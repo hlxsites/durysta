@@ -47,7 +47,7 @@
 
 .scroll-animation .scroll-animation-heading {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   background-color: #00806e;
   color: #ffffff;
   border-radius: 12rem;
@@ -57,6 +57,7 @@
   line-height: 1;
   cursor: pointer;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .scroll-animation .scroll-animation-text {
