@@ -51,9 +51,12 @@ export default function decorate(block) {
       cell.dataset.index = rowIndex;
       if (colIndex === 0) cell.className = 'scroll-animation-image';
       if (colIndex === 1) cell.className = 'scroll-animation-body';
-      if (colIndex === 1) [...cell.children].forEach((element, elIndex) => {
-        if (elIndex === 0) element.className = 'scroll-animation-heading';
-        if (elIndex > 0) element.className = 'scroll-animation-text';
+      if (colIndex === 1) [...cell.children].forEach((element) => {
+        if (element.matches('h1,h2,h3,h4,h5,h6'))  {
+          element.className = 'scroll-animation-heading';
+        } else {
+          element.className = 'scroll-animation-text';
+        }
       });
       container.append(cell);
     });
