@@ -214,18 +214,19 @@ export default async function decorate(block) {
         activeSection = activeSection === undefined ? activeHighestRatio : activeSection;
 
         // Find nav button corresponding to the current section and set it as current-nav
+        let activeHeaders = '';
         if (activeSection !== undefined) {
-          const activeHeaders = activeSection.dataset.headers.split(',');
-          document
-            .querySelectorAll('nav > .nav-sections > ul > li')
-            .forEach((navItem) => {
-              if (activeHeaders.includes(navItem.querySelectorAll('a')[0].hash)) {
-                navItem.classList.add('current-nav');
-              } else {
-                navItem.classList.remove('current-nav');
-              }
-            });
+          activeHeaders = activeSection.dataset.headers.split(',');
         }
+        document
+          .querySelectorAll('nav > .nav-sections > ul > li')
+          .forEach((navItem) => {
+            if (activeHeaders.includes(navItem.querySelectorAll('a')[0].hash)) {
+              navItem.classList.add('current-nav');
+            } else {
+              navItem.classList.remove('current-nav');
+            }
+          });
       },
       { threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] },
     );
