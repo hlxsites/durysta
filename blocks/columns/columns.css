@@ -19,7 +19,7 @@
   display: block;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
@@ -135,7 +135,7 @@
   text-align: center;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .columns .columns-single h6 {
     font-size: var(--body-font-size-s);
     margin-bottom: 14px;
@@ -177,7 +177,7 @@ section.resource-faq .columns > div {
   align-items: center;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   section.resource-faq .columns > div  {
     align-items: flex-start;
   }
@@ -336,7 +336,7 @@ section.resource-faq .columns p {
   font-size: 14px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .section.saving-program .columns .columns-left img {
     margin-left: auto;
     margin-right: auto;
