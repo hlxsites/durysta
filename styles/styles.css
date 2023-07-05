@@ -267,6 +267,18 @@ strong {
   font-family: var(--strong-font-family);
 }
 
+sup, sub {
+  position: relative;
+  font-size: 0.5em;
+  font-weight: 400;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -6px;
+}
+
 code, pre, samp {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
@@ -405,10 +417,6 @@ main .section {
   body {
     font-size: var(--body-font-size-m);
   }
-
-  main .section.green-box.carousel-container {
-    max-width: 1160px !important;
-  }
 }
 
 /* laptop break point */
@@ -461,43 +469,8 @@ main .default-content-wrapper, main .columns-wrapper {
   overflow-wrap: break-word;
 }
 
-main .section.green-box.carousel-container {
-  max-width: 84%;
-  margin: 0 auto;
-  border-top-right-radius: 24px;
-  border-top-left-radius: 24px;
-  overflow: hidden;
-  background-color: var(--clr-green);
-  color: #fff;
-  text-align: center;
-}
-
-main .section.green-box.carousel-container .default-content-wrapper {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
 main .site-map-description p {
   line-height: 18px;
-}
-
-main .section.green-box.carousel-container .default-content-wrapper p {
-  padding: 0 0 10px;
-  margin: 0;
-  font-size: 14px;
-  max-width: 50%;
-}
-
-main .section.green-box.carousel-container h4 {
-  font-family: var(--ff-itc-avant-bold);
-  font-size: 18px;
-  line-height: 24px;
-  vertical-align: baseline;
-  max-width: 30%;
 }
 
 main .site-map-list ul {
