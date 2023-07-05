@@ -8,7 +8,9 @@ function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
     const navSections = nav.querySelector('.nav-sections');
-    const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
+    const navSectionExpanded = navSections.querySelector(
+      '[aria-expanded="true"]',
+    );
     if (navSectionExpanded && isDesktop.matches) {
       // eslint-disable-next-line no-use-before-define
       toggleAllNavSections(navSections);
@@ -54,13 +56,21 @@ function toggleAllNavSections(sections, expanded = false) {
  * @param {*} forceExpanded Optional param to force nav expand behavior when not null
  */
 function toggleMenu(nav, navSections, forceExpanded = null) {
-  const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
+  const expanded = forceExpanded !== null
+    ? !forceExpanded
+    : nav.getAttribute('aria-expanded') === 'true';
   const button = nav.querySelector('.nav-hamburger button');
-  document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
+  document.body.style.overflowY = expanded || isDesktop.matches ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+  button.setAttribute(
+    'aria-label',
+    expanded ? 'Open navigation' : 'Close navigation',
+  );
   if (navSections) {
-    toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
+    toggleAllNavSections(
+      navSections,
+      expanded || isDesktop.matches ? 'false' : 'true',
+    );
     // enable nav dropdown keyboard accessibility
     const navDrops = navSections.querySelectorAll('.nav-drop');
     if (isDesktop.matches) {
@@ -115,12 +125,17 @@ export default async function decorate(block) {
     const navSections = nav.querySelector('.nav-sections');
     if (navSections) {
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
-        if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+        if (navSection.querySelector('ul')) {
+          navSection.classList.add('nav-drop');
+        }
         navSection.addEventListener('click', () => {
           if (isDesktop.matches) {
             const expanded = navSection.getAttribute('aria-expanded') === 'true';
             toggleAllNavSections(navSections);
-            navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            navSection.setAttribute(
+              'aria-expanded',
+              expanded ? 'false' : 'true',
+            );
           }
         });
       });
@@ -148,7 +163,109 @@ export default async function decorate(block) {
 
     document.addEventListener('scroll', () => {
       const navSection = document.querySelector('.nav-sections');
-      navSection.setAttribute('fixed-header', window.scrollY > 100 ? 'true' : 'false');
+      navSection.setAttribute(
+        'fixed-header',
+        window.scrollY > 100 ? 'true' : 'false',
+      );
+    });
+
+    // Recalculates active nav section after the window is scrolled
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.dataset.navIntersectRatio = entry.intersectionRatio;
+          entry.target.dataset.navIntersectHeight = Math.round(
+            entry.intersectionRect.height,
+          );
+        });
+
+        // Active section:
+        // - any section that covers more than 50% of window.screen.height
+        // - otherwise: highest height visible of any sections that have > 50% ratio visible
+        // - otherwise: highest ratio visible
+        let activeHalfScreen;
+        let activeLargestHeight;
+        let activeHighestRatio;
+
+        document.querySelectorAll('.nav-detector').forEach((section) => {
+          if (section.dataset.navIntersectHeight * 2 > window.screen.height) {
+            activeHalfScreen = section;
+          }
+          if (section.dataset.navIntersectRatio > 0.49) {
+            if (
+              activeLargestHeight === undefined
+              || section.dataset.navIntersectHeight
+              > activeLargestHeight.dataset.navIntersectHeight
+            ) {
+              activeLargestHeight = section;
+            }
+          }
+          if (
+            activeHighestRatio === undefined
+            || section.dataset.navIntersectRatio
+            > activeHighestRatio.dataset.navIntersectRatio
+          ) {
+            activeHighestRatio = section;
+          }
+        });
+
+        let activeSection = activeHalfScreen;
+        activeSection = activeSection === undefined ? activeLargestHeight : activeSection;
+        activeSection = activeSection === undefined ? activeHighestRatio : activeSection;
+
+        // Find nav button corresponding to the current section and set it as current-nav
+        if (activeSection !== undefined) {
+          const activeHeaders = activeSection.dataset.headers.split(',');
+          document
+            .querySelectorAll('nav > .nav-sections > ul > li')
+            .forEach((navItem) => {
+              if (activeHeaders.includes(navItem.querySelectorAll('a')[0].hash)) {
+                navItem.classList.add('current-nav');
+              } else {
+                navItem.classList.remove('current-nav');
+              }
+            });
+        }
+      },
+      { threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] },
+    );
+
+    // Find sections containing each h1 header, store the headier id, and add it to nav detection
+    document.querySelectorAll('h1').forEach((header) => {
+      let highestParent = header;
+      let levels = 20;
+      while (
+        highestParent
+        && levels > 0
+        && !highestParent.classList.contains('section')
+      ) {
+        highestParent = highestParent.parentElement;
+        levels -= 1;
+      }
+      if (!highestParent) {
+        highestParent = header;
+      }
+      if (highestParent.dataset.headers === undefined) {
+        highestParent.dataset.headers = `#${header.id}`;
+      } else {
+        highestParent.dataset.headers += `,#${header.id}`;
+      }
+      highestParent.classList.add('nav-detector');
+      observer.observe(highestParent);
+    });
+
+    // Roll forward nav detection to following sections that don't have any h1 headers.
+    let lastSection;
+    document.querySelectorAll('.section').forEach((section) => {
+      if (
+        lastSection !== undefined
+        && !section.classList.contains('nav-detector')
+      ) {
+        section.dataset.headers = lastSection.dataset.headers;
+        section.classList.add('nav-detector');
+        observer.observe(section);
+      }
+      lastSection = section;
     });
   }
 }
