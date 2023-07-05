@@ -178,7 +178,7 @@
   --nav-height: var(--nav-height-mobile);
 }
 
-@media (min-width: 990px) {
+@media (min-width: 992px) {
   :root {
     --heading-font-size-xxl: 32px;
     --heading-font-size-xl: 24px;
@@ -190,7 +190,7 @@
   }
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   :root {
     --body-font-size-s: 18px;
     --body-line-height: 1.33;
