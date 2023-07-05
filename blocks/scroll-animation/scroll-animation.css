@@ -8,12 +8,13 @@
   --scroll-animation-height: 554px;
   display: block;
   height: calc(var(--scroll-animation-height) * var(--scroll-animation-items, 1));
+  padding: calc((100vh - var(--scroll-animation-height)) / 2) 0;
 }
 
 .scroll-animation .scroll-animation-window {
   position: sticky;
   height: var(--scroll-animation-height);
-  top: 0px;
+  top: calc((100vh - var(--scroll-animation-height)) / 2);
   display: grid;
   overflow: hidden;
 }
