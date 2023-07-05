@@ -1,0 +1,22 @@
+.isi-content h1 {
+	font-family: var(--isi-title-font-family);
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 34px;
+}
+
+.isi-content h2 {
+	font-family: var(--isi-title-font-family);
+	font-size: 24px;
+	font-weight: 700;
+	margin: 0 0 5px;
+}
+
+.isi-content p,
+.isi-content li {
+	margin: 0 0 14px;
+}
+
+.isi-content ul {
+	padding-inline-start: 20px;
+}
