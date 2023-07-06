@@ -23,6 +23,14 @@
   display: block;
 }
 
+.columns > div > div > :first-child {
+  margin-top: 0;
+}
+
+.columns > div > div > :last-child {
+  margin-bottom: 0;
+}
+
 @media (min-width: 768px) {
   .columns > div {
     align-items: center;
@@ -121,10 +129,6 @@
   z-index: 1;
 }
 
-.columns h3 {
-  margin-top: 0;
-}
-
 .columns h6 strong {
   font-family: var(--body-font-family);
   font-weight: 400;
@@ -211,7 +215,7 @@
   }
 }
 
-.section.resource-faq .columns > div img {
+.section.resource-faq .columns > div > div img {
   width: auto;
   height: 298px;
   margin-left: auto;
@@ -244,10 +248,10 @@
   max-width: 170px;
   margin-left: auto;
   margin-right: 0;
+  margin-bottom: 6px;
 }
 
 .section.saving-program .columns .columns-right h3 {
-  margin-top: 6px;
   margin-bottom: 0;
   font-size: 15px;
   line-height: 20px;
@@ -293,12 +297,12 @@
   .section.saving-program .columns .columns-left img {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0;
     max-width: 223px;
   }
 
   .section.saving-program .columns .columns-right h3 {
     font-size: 20px;
-    margin-top: 0;
     line-height: 26px;
   }
 
@@ -366,12 +370,10 @@
 
 .section.treat-talk .columns h1 {
   font-size: 30px;
-  margin-top: 0;
 }
 
 .section.treat-talk .columns h2 {
   font-size: 21px;
-  margin-top: 0;
 }
 
 .section.treat-talk .columns .columns-left h3 {

@@ -257,6 +257,10 @@ h3 {
   font-weight: 700;
 }
 
+h1 + h3 {
+  margin-top: 0;
+}
+
 h4 { font-size: var(--heading-font-size-m) }
 h5 { font-size: var(--heading-font-size-s) }
 h6 { font-size: var(--heading-font-size-xs) }
@@ -479,6 +483,11 @@ main .section-divider {
   box-sizing: border-box;
 }
 
+main p:has(.section-divider) {
+  margin-top: -6px;
+  margin-bottom: 0;
+}
+
 main .default-content-wrapper, main .columns-wrapper {
   overflow-wrap: break-word;
 }
@@ -512,4 +521,35 @@ main .site-map-description h1, main .site-map-description h2 {
 main .site-map-description ul {
   margin: 0 20px;
   padding: 0;
+}
+
+main .about-durysta ul {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+main .about-durysta .columns {
+  margin-top: 31px;
+}
+
+main .about-durysta p:has(strong) {
+  margin-bottom: 31px;
+}
+
+@media (min-width: 768px) {
+  main .about-durysta ul {
+    margin-top: 30px;
+  }
+
+  main .about-durysta .columns {
+    margin-top: 16px;
+  }
+
+  main .about-durysta .columns-wrapper {
+    max-width: 94%;
+  }
+
+  main .about-durysta p:has(strong) {
+    margin-bottom: 41px;
+  }
 }
