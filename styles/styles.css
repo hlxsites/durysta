@@ -138,7 +138,8 @@
   --ff-FeltTipRomanW01-Reg: 'FeltTipRomanW01-Reg','FeltTipRomanW01-Reg-Fallback',sans-serif;
   --heading-font-family: sans-serif;
   --body-font-family: var(--ff-ITCAvantGardeGothicW01-Md);
-  --strong-font-family: var(--ff-ITCAvantGardeGothicW01-Dm);
+  --strong-font-family: var(--ff-ITCAvantGardeGothicW01-Bd);
+  --dm-font-family: var(--ff-ITCAvantGardeGothicW01-Dm);
   --heading-font-family-xxl: var(--ff-ITCAvantGardeGothicW01-Md);
   --heading-font-family-xl: var(--ff-ITCAvantGardeGothicW01-Md);
   --heading-font-family-l: var(--ff-ITCAvantGardeGothicW01-Dm);
