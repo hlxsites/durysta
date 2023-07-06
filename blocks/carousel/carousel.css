@@ -269,8 +269,8 @@ main .section.green-box.carousel-container .carousel-dot-button {
   }
 
   main .carousel-item[data-index='3'] .button-container {
-    bottom: 29%;
-    left: 6%;
+    bottom: 16%;
+    left: 14%;
   }
 
   main .carousel-item-column .button-container .button.primary {
