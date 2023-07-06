@@ -215,7 +215,7 @@ export default async function decorate(block) {
 
         // Find nav button corresponding to the current section and set it as current-nav
         let activeHeaders = '';
-        if (activeSection !== undefined) {
+        if (activeSection !== undefined && activeSection.dataset.navIntersectHeight > 0 && window.scrollY > 150) {
           activeHeaders = activeSection.dataset.headers.split(',');
         }
         document
