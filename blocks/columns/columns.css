@@ -375,8 +375,8 @@
   margin-bottom: 20px;
 }
 
-.section.treat-talk .columns li {
-  padding: 4px 0;
+.section.treat-talk .columns li:not(:last-child) {
+  margin-bottom: 8px;
 }
 
 .section.treat-talk .columns p {
@@ -426,8 +426,8 @@
     margin-bottom: 34px;
   }
 
-  .section.treat-talk .columns li {
-    padding: 6px 0;
+  .section.treat-talk .columns li:not(:last-child) {
+    margin-bottom: 12px;
   }
 
   .section.treat-talk .columns .columns-right h2 {
