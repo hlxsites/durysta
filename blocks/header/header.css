@@ -188,11 +188,19 @@ header nav .nav-sections ul li:not(:last-child):hover {
   background: var(--header-hover-background-color);
 }
 
+header nav .nav-sections ul li:not(:last-child).current-nav {
+  background: var(--header-hover-background-color);
+}
+
 header nav .nav-tools ul li:not(:first-child):hover {
   background: var(--header-hover-background-color);
 }
 
 header nav .nav-tools ul li:hover a, header nav .nav-sections ul li:not(:last-child):hover a {
+  color: var(--header-text-hover-color);
+}
+
+header nav .nav-sections ul li:not(:last-child).current-nav a {
   color: var(--header-text-hover-color);
 }
 
