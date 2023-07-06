@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.columns strong {
+  font-family: var(--dm-font-family);
+}
+
 .columns > div > div {
   order: 1;
 }
@@ -32,47 +36,43 @@
   }
 }
 
-.section.columns-slide-image-from-left {
+.section:has(.columns.slide-image-from-left) {
   overflow: hidden;
 }
 
-.section.columns-slide-image-from-right {
+.section:has(.columns.slide-image-from-right) {
   overflow: hidden;
 }
 
-.section.columns-slide-image-from-left
-  .columns
+.columns.slide-image-from-left
   :is(.columns-left, .columns-single)
   :is(img) {
   opacity: 0;
   transform: translate3d(100%, 0, 0);
 }
 
-.section.columns-slide-image-from-left
-  .columns
+.columns.slide-image-from-left
   :is(.columns-left, .columns-single)
   :is(img).enter {
   animation-fill-mode: both;
   animation-duration: 1s;
-  animation-delay: 1.5s;
+  animation-delay: 0.9s;
   animation-name: fade-in-left;
 }
 
-.section.columns-slide-image-from-right
-  .columns
+.columns.slide-image-from-right
   :is(.columns-right, .columns-single)
   :is(img) {
   opacity: 0;
   transform: translate3d(100%, 0, 0);
 }
 
-.section.columns-slide-image-from-right
-  .columns
+.columns.slide-image-from-right
   :is(.columns-right, .columns-single)
   :is(img).enter {
   animation-fill-mode: both;
   animation-duration: 1s;
-  animation-delay: 1.2s;
+  animation-delay: 0.6s;
   animation-name: fade-in-right;
 }
 
@@ -197,6 +197,10 @@
   margin-right: auto;
 }
 
+.section.resource-faq .columns strong {
+  font-family: var(--strong-font-family);
+}
+
 .section.resource-faq .columns > div {
   align-items: center;
 }
@@ -212,10 +216,6 @@
   height: 298px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.section.resource-faq .columns strong {
-  font-family: var(--ff-itc-avant-bold);
 }
 
 .section.resource-faq h1 {
@@ -270,9 +270,14 @@
   margin-bottom: 8px;
 }
 
+.section.saving-program .default-content-wrapper strong {
+  font-family: var(--dm-font-family);
+}
+
 .section.saving-program .default-content-wrapper a {
   text-decoration: underline;
   color: var(--text-color);
+  font-family: var(--dm-font-family);
 }
 
 .section.saving-program .default-content-wrapper h6 {
