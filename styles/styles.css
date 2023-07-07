@@ -497,6 +497,11 @@ main .section:first-of-type > div{
   main .section.client-testimonial .columns-wrapper {
     width: auto; /* size is different than default <p> only on tablet down */
   }
+
+  main .section.client-testimonial .columns-wrapper .columns-left {
+    width: 88%;
+    margin: auto;
+  }
 }
 
 /* tablet break point */
