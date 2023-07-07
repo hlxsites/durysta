@@ -481,11 +481,15 @@ main .section-divider {
   right: 0;
   display: block;
   box-sizing: border-box;
+  margin-top: -22px;
+  margin-bottom: -16px;
 }
 
-main p:has(.section-divider) {
-  margin-top: -6px;
-  margin-bottom: 0;
+@media (min-width: 768px) {
+  main .section-divider {
+    margin-top: -24px;
+    margin-bottom: -18px;
+  }
 }
 
 main .default-content-wrapper, main .columns-wrapper {
@@ -534,6 +538,10 @@ main .about-durysta .columns {
 
 main .about-durysta p:has(strong) {
   margin-bottom: 31px;
+}
+
+main .about-durysta li::marker {
+  color: var(--list-marker-color);
 }
 
 @media (min-width: 768px) {
