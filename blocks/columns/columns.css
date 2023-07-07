@@ -23,14 +23,6 @@
   display: block;
 }
 
-.columns > div > div > :first-child {
-  margin-top: 0;
-}
-
-.columns > div > div > :last-child {
-  margin-bottom: 0;
-}
-
 @media (min-width: 768px) {
   .columns > div {
     align-items: center;
@@ -41,6 +33,14 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns > div:first-child > div > :first-child {
+    margin-top: 0;
+  }
+
+  .columns > div:last-child > div > :last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -447,6 +447,7 @@
 
   .section.treat-talk .columns .columns-middle img {
     position: absolute;
+    width: 408px;
     max-width: 408px;
     transform: translateX(-50%) rotate(90deg) translateX(50%) translateY(-25px);
   }
