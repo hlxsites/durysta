@@ -39,7 +39,7 @@ class ScrollAnimation {
       const target = event.target.closest('.scroll-animation-heading');
       if (!target) return;
       const index = Number(target.closest('[data-index]').dataset.index);
-      if (isNaN(index)) return;
+      if (Number.isNaN(index)) return;
       const rect = this.block.getBoundingClientRect();
       const offset = rect.top + (index - 1 ) * (rect.height / this.itemsCount) + document.documentElement.scrollTop + 1;
       window.scrollTo({ top: offset, behavior: 'instant' });

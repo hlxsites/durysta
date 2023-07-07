@@ -6,6 +6,7 @@
 
 .scroll-animation {
   --scroll-animation-height: 554px;
+
   display: block;
   height: calc(var(--scroll-animation-height) * var(--scroll-animation-items, 1));
   padding: calc((100vh - var(--scroll-animation-height)) / 2) 0;
@@ -49,7 +50,7 @@
   position: absolute;
   z-index: 3;
   background-color: #00806e;
-  color: #ffffff;
+  color: #fff;
   border-radius: 12rem;
   padding: 0.7rem 1rem;
   font-size: 1.4rem;
@@ -164,6 +165,7 @@
 		width: 140px;
   }
 }
+
 /* desktop break point */
 @media (min-width: 1200px) {
   .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
@@ -199,6 +201,7 @@
     width: 155px;
   }
 }
+
 /* hd break point */
 @media (min-width: 1366px) {
   .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
