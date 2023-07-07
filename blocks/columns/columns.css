@@ -23,6 +23,14 @@
   display: block;
 }
 
+.columns > div > div > :first-child {
+  margin-top: 0;
+}
+
+.columns > div > div > :last-child {
+  margin-bottom: 0;
+}
+
 @media (min-width: 768px) {
   .columns > div {
     align-items: center;
@@ -36,12 +44,8 @@
   }
 }
 
-.section:has(.columns.slide-image-from-left) {
-  overflow: hidden;
-}
-
-.section:has(.columns.slide-image-from-right) {
-  overflow: hidden;
+.section.columns-slide-image-from-right-container {
+  overflow-x: hidden;
 }
 
 .columns.slide-image-from-left
@@ -100,11 +104,11 @@
   }
 }
 
-.columns .columns-col:has(h6) {
+.columns .columns-col {
   position: relative;
 }
 
-.columns .columns-col:has(h6) p {
+.columns .columns-col > h6 ~ p {
   margin: 0;
 }
 
@@ -119,10 +123,6 @@
   display: block;
   margin: 0;
   z-index: 1;
-}
-
-.columns h3 {
-  margin-top: 0;
 }
 
 .columns h6 strong {
@@ -211,7 +211,7 @@
   }
 }
 
-.section.resource-faq .columns > div img {
+.section.resource-faq .columns > div > div img {
   width: auto;
   height: 298px;
   margin-left: auto;
@@ -244,10 +244,10 @@
   max-width: 170px;
   margin-left: auto;
   margin-right: 0;
+  margin-bottom: 6px;
 }
 
 .section.saving-program .columns .columns-right h3 {
-  margin-top: 6px;
   margin-bottom: 0;
   font-size: 15px;
   line-height: 20px;
@@ -293,12 +293,12 @@
   .section.saving-program .columns .columns-left img {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0;
     max-width: 223px;
   }
 
   .section.saving-program .columns .columns-right h3 {
     font-size: 20px;
-    margin-top: 0;
     line-height: 26px;
   }
 
@@ -366,12 +366,10 @@
 
 .section.treat-talk .columns h1 {
   font-size: 30px;
-  margin-top: 0;
 }
 
 .section.treat-talk .columns h2 {
   font-size: 21px;
-  margin-top: 0;
 }
 
 .section.treat-talk .columns .columns-left h3 {
@@ -380,8 +378,8 @@
   margin-bottom: 20px;
 }
 
-.section.treat-talk .columns li {
-  padding: 4px 0;
+.section.treat-talk .columns li:not(:last-child) {
+  margin-bottom: 8px;
 }
 
 .section.treat-talk .columns p {
@@ -431,8 +429,8 @@
     margin-bottom: 34px;
   }
 
-  .section.treat-talk .columns li {
-    padding: 6px 0;
+  .section.treat-talk .columns li:not(:last-child) {
+    margin-bottom: 12px;
   }
 
   .section.treat-talk .columns .columns-right h2 {

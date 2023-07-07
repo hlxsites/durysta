@@ -257,6 +257,10 @@ h3 {
   font-weight: 700;
 }
 
+h1 + h3 {
+  margin-top: 0;
+}
+
 h4 { font-size: var(--heading-font-size-m) }
 h5 { font-size: var(--heading-font-size-s) }
 h6 { font-size: var(--heading-font-size-xs) }
@@ -355,6 +359,10 @@ a.button.secondary, button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color);
+}
+
+li:not(:last-child) {
+  margin-bottom: 18px;
 }
 
 main input {
@@ -473,6 +481,15 @@ main .section-divider {
   right: 0;
   display: block;
   box-sizing: border-box;
+  margin-top: -22px;
+  margin-bottom: -16px;
+}
+
+@media (min-width: 768px) {
+  main .section-divider {
+    margin-top: -24px;
+    margin-bottom: -18px;
+  }
 }
 
 main .default-content-wrapper, main .columns-wrapper {
@@ -508,4 +525,40 @@ main .site-map-description h1, main .site-map-description h2 {
 main .site-map-description ul {
   margin: 0 20px;
   padding: 0;
+}
+
+main .about-durysta ul {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+main .about-durysta .columns {
+  margin-top: 31px;
+}
+
+main .about-durysta p > strong {
+  display: block;
+  margin-bottom: 31px;
+}
+
+main .about-durysta li::marker {
+  color: var(--list-marker-color);
+}
+
+@media (min-width: 768px) {
+  main .about-durysta ul {
+    margin-top: 30px;
+  }
+
+  main .about-durysta .columns {
+    margin-top: 16px;
+  }
+
+  main .about-durysta .columns-wrapper {
+    max-width: 94%;
+  }
+
+  main .about-durysta p > strong {
+    margin-bottom: 41px;
+  }
 }
