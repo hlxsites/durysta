@@ -65,7 +65,7 @@
   z-index: 2;
   text-align: left;
   padding: initial;
-  font-size: 18px;
+  font-size: var(--body-font-size-xs);
   color: #414042;
   opacity: 0;
   transition: ease-in-out 500ms;
@@ -95,35 +95,142 @@
 /* Custom placement for each heading and text */
 
 .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
-  top: 69%;
-  left: 22%;
+  top: 64%;
+  left: 11%;
 }
 
 .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
-  top: 53%;
-  left: 7%;
-  width: 180px;
+  top: 75%;
+  left: 6%;
 }
 
 .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
-  top: 14%;
-  left: 69%;
+  top: 9%;
+  left: 18%;
 }
 
 .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
-  top: 12%;
-  left: 76%;
-  width: 230px;
+  top: 6%;
+  left: 35%;
 }
 
 .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
-  top: 74%;
-  left: 76%;
+  top: 59%;
+  left: 73%;
 }
 
 .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
-  top: 73%;
-  left: 83%;
-  width: 155px;
+  top: 70%;
+  right: 0;
+  width: 140px;
 }
 
+/* tablet break point */
+@media (min-width: 768px) {
+  .scroll-animation .scroll-animation-text {
+    font-size: var(--body-font-size-s);
+  }
+
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
+		top: 75%;
+		left: 23%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
+    top: 81%;
+    left: 6%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
+		top: 13%;
+		left: 65%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
+		top: 10%;
+		left: 74%;
+		width: auto;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
+		top: 70%;
+		left: 72%;
+    right: auto;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
+		top: 70%;
+		left: 82%;
+		width: 140px;
+  }
+}
+/* desktop break point */
+@media (min-width: 1200px) {
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
+		top: 75%;
+		left: 23%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
+		top: 60%;
+		left: 6%;
+		width: auto;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
+		top: 13%;
+		left: 65%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
+		top: 10%;
+		left: 74%;
+		width: auto;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
+		top: 70%;
+		left: 77%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
+		top: 70%;
+		left: 83.8%;
+    width: 155px;
+  }
+}
+/* hd break point */
+@media (min-width: 1366px) {
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
+    top: 69%;
+    left: 22%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
+    top: 53%;
+    left: 7%;
+    width: 180px;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
+    top: 14%;
+    left: 69%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
+    top: 12%;
+    left: 76%;
+    width: 230px;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
+    top: 74%;
+    left: 76%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
+    top: 73%;
+    left: 83%;
+    width: 155px;
+  }
+}
