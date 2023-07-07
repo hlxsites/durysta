@@ -72,11 +72,6 @@
   transition: ease-in-out 500ms;
 }
 
-.scroll-animation[data-current-index="0"] .scroll-animation-scroll-icon,
-.scroll-animation[data-current-index="3"] .scroll-animation-scroll-icon {
-  opacity: 1;
-}
-
 .scroll-animation .scroll-animation-image[data-status="behind"],
 .scroll-animation .scroll-animation-image[data-status="active"],
 .scroll-animation .scroll-animation-body[data-status="active"] .scroll-animation-text{
@@ -96,32 +91,32 @@
 /* Custom placement for each heading and text */
 
 .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
-  top: 64%;
+  top: 65%;
   left: 11%;
 }
 
 .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
-  top: 75%;
+  top: 80%;
   left: 6%;
 }
 
 .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
   top: 9%;
-  left: 18%;
+  left: 10%;
 }
 
 .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
-  top: 6%;
+  top: 14%;
   left: 35%;
 }
 
 .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
-  top: 59%;
-  left: 73%;
+  top: 62%;
+  left: 75%;
 }
 
 .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
-  top: 70%;
+  top: 78%;
   right: 0;
   width: 140px;
 }
@@ -130,6 +125,11 @@
 @media (min-width: 768px) {
   .scroll-animation .scroll-animation-text {
     font-size: var(--body-font-size-s);
+  }
+
+  .scroll-animation[data-current-index="0"] .scroll-animation-scroll-icon,
+  .scroll-animation[data-current-index="3"] .scroll-animation-scroll-icon {
+    opacity: 1;
   }
 
   .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
