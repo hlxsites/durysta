@@ -3,6 +3,11 @@
   display: block;
 }
 
+.section.faq-container .default-content-wrapper h1 {
+  margin-top: 45px;
+  margin-bottom: 40px;
+}
+
 .faq-header {
   background-color: var(--faq-title-background-color);
   padding: 15px 10px;
