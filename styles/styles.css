@@ -361,7 +361,7 @@ a.button.secondary, button.secondary {
   color: var(--text-color);
 }
 
-li:not(:last-child) {
+main li:not(:last-child) {
   margin-bottom: 18px;
 }
 
