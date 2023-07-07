@@ -44,12 +44,8 @@
   }
 }
 
-.section:has(.columns.slide-image-from-left) {
-  overflow: hidden;
-}
-
-.section:has(.columns.slide-image-from-right) {
-  overflow: hidden;
+.section.columns-slide-image-from-right-container {
+  overflow-x: hidden;
 }
 
 .columns.slide-image-from-left
@@ -108,11 +104,11 @@
   }
 }
 
-.columns .columns-col:has(h6) {
+.columns .columns-col {
   position: relative;
 }
 
-.columns .columns-col:has(h6) p {
+.columns .columns-col > h6 ~ p {
   margin: 0;
 }
 
