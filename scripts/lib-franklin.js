@@ -266,7 +266,14 @@ export function decorateBlock(block) {
     const blockWrapper = block.parentElement;
     blockWrapper.classList.add(`${shortBlockName}-wrapper`);
     const section = block.closest('.section');
-    if (section) section.classList.add(`${shortBlockName}-container`);
+    if (section) {
+      section.classList.add(`${shortBlockName}-container`);
+      for (let i = 1; i < block.classList.length; i += 1) {
+        const variant = block.classList[i];
+        if (variant === 'block') break;
+        section.classList.add(`${shortBlockName}-${variant}-container`);
+      }
+    }
   }
 }
 
