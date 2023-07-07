@@ -463,11 +463,16 @@ main .section {
   padding: 0 0 1.5rem;
 }
 
-main .section > div {
+main .section > div,
+main .section.green-box.carousel-container {
   margin: auto;
   width: 88%;
   max-width: var(--content-max-width);
 }
+
+ main .section.green-box > div {
+  width: auto;
+ }
 
 /* hero/carousel section */
 main .section:first-of-type {
@@ -488,7 +493,8 @@ main .section:first-of-type > div{
 
 /* tablet break point */
 @media (min-width: 768px) {
-   main .section > div {
+   main .section > div,
+   main .section.green-box.carousel-container {
     width: 90%;
   }
 }

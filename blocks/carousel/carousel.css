@@ -2,10 +2,6 @@ main .carousel-container {
   padding: 0;
 }
 
-/* main .carousel-container:not(.green-box) {
-  width: auto;
-} */
-
 main div.carousel-wrapper {
   position: relative;
   margin: 0 auto;
@@ -164,6 +160,9 @@ main .section.green-box.carousel-container {
   margin: 30px auto 90px;
   color: #fff;
   text-align: center;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 19px 5px 16px -13px rgb(0 0 0 / 48%);
 }
 
 main .section.green-box.carousel-container .carousel {
