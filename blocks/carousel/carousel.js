@@ -396,9 +396,10 @@ class Carousel {
     }
 
     this.block.innerHTML = '';
-    this.data.forEach((item) => {
+    this.data.forEach((item, idx) => {
       const itemContainer = document.createElement('div');
       itemContainer.className = 'carousel-item';
+      itemContainer.dataset.index = idx;
 
       let renderedItem = this.cardRenderer.renderItem(item);
       renderedItem = Array.isArray(renderedItem) ? renderedItem : [renderedItem];
@@ -421,11 +422,15 @@ class Carousel {
       && (this.intervalId = setInterval(() => { this.nextItem(); }, this.autoScrollInterval));
     this.dotButtons && this.createDotButtons();
     this.counter && this.createCounter();
-    this.navButtons && this.createNavButtons(this.block.parentElement);
     this.infiniteScroll && this.createClones();
     this.addSwipeCapability();
     this.infiniteScroll && this.setInitialScrollingPosition();
     this.cssFiles && (await defaultCSSPromise);
+
+    // create navigation
+    const navigation = div({ class: 'carousel-nav' });
+    this.navButtons && this.createNavButtons(navigation);
+    this.block.parentElement.append(navigation);
   }
 }
 

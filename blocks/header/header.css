@@ -188,11 +188,19 @@ header nav .nav-sections ul li:not(:last-child):hover {
   background: var(--header-hover-background-color);
 }
 
+header nav .nav-sections ul li:not(:last-child).current-nav {
+  background: var(--header-hover-background-color);
+}
+
 header nav .nav-tools ul li:not(:first-child):hover {
   background: var(--header-hover-background-color);
 }
 
 header nav .nav-tools ul li:hover a, header nav .nav-sections ul li:not(:last-child):hover a {
+  color: var(--header-text-hover-color);
+}
+
+header nav .nav-sections ul li:not(:last-child).current-nav a {
   color: var(--header-text-hover-color);
 }
 
@@ -214,7 +222,8 @@ header nav :is(.nav-sections,.nav-tools) ul li a br::after {
 /* laptop break point */
 @media (min-width: 992px) {
   header .nav-wrapper {
-    height: var(--nav-height-laptop);
+    overflow: auto;
+    height: var(--nav-height);
     position: relative;
   }
 
@@ -283,7 +292,7 @@ header nav :is(.nav-sections,.nav-tools) ul li a br::after {
   }
 
   header nav .nav-sections {
-    margin-top: 151px;
+    margin-top: 157px;
     background-color: var(--header-background-color);
     position: absolute;
     left: 0;
@@ -365,10 +374,6 @@ header nav :is(.nav-sections,.nav-tools) ul li a br::after {
     max-width: 1200px;
   }
 
-  header .nav-wrapper {
-    height: var(--nav-height-desktop);
-  }
-
   header nav .nav-brand {
     width: 216px;
     height: 83px;
@@ -377,7 +382,7 @@ header nav :is(.nav-sections,.nav-tools) ul li a br::after {
   }
 
   header nav .nav-sections {
-    margin-top: 157px;
+    margin-top: 142px;
   }
 
   header nav .nav-tools ul li:first-child, header nav .nav-tools ul li a {
@@ -391,5 +396,12 @@ header nav :is(.nav-sections,.nav-tools) ul li a br::after {
 
   header nav .nav-sections ul li:last-child a {
     font-size: 18px;
+  }
+}
+
+/* hd break point */
+@media (min-width: 1366px) {
+  header nav .nav-sections {
+    margin-top: 157px;
   }
 }
