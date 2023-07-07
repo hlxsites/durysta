@@ -10,7 +10,7 @@ footer .footer {
   margin: 0 auto;
   display: block;
   padding: 0 20px;
-  max-width: 1160px;
+  max-width: var(--content-max-width);
   text-align: center;
 }
 

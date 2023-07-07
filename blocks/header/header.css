@@ -231,7 +231,7 @@ header nav :is(.nav-sections,.nav-tools) ul li a br::after {
     grid-template:
       'brand tools' var(--nav-height-laptop)
       'sections sections' 1fr;
-    max-width: 1160px;
+    max-width: var(--content-max-width);
     background-color: var(--background-color);
     margin: auto;
   }

@@ -97,33 +97,35 @@
 
 :root {
   /* colors */
-  --text-color: #414042;
-  --link-color: #414042;
-  --link-hover-color: #414042;
-  --background-color: #fff;
-  --clr-green: #00806e;
-  --clr-yellow: #ffc60b;
+  --clr-dark-grey: #414042; /* alternate dark grey on live site: #212529 */
+  --clr-white: #fff;
+  --clr-green: #00806e; /* alternate green on live site: #00806f */  
+  --clr-orange-brown: #c4622d;
+  --clr-yellow: #ffc60b; /* alternate yellow on live site: #ffc107 */
+  --text-color: var(--clr-dark-grey);
+  --link-color: var(--clr-dark-grey);
+  --link-hover-color: var(--clr-dark-grey);
+  --background-color: var(--clr-white);;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --header-background-color: var(--clr-green);
   --header-hover-background-color: var(--clr-yellow);
-  --header-text-color: #fff;
-  --header-text-hover-color: #414042;
+  --header-text-color: var(--clr-white);
+  --header-text-hover-color: var(--clr-dark-grey);
   --header-find-doctor-color: #000;
-  --header-tools-text-color: #414042;
-  --header-hamburger-color: var(--clr-green);
+  --header-tools-text-color: var(--clr-dark-grey);
+  --header-hamburger-color: var(--clr-green);;
   --footer-background-color: var(--clr-green);
-  --footer-text-color: #fff;
+  --footer-text-color: var(--clr-white);;
   --heading-text-color-xxl: var(--clr-green);
   --heading-text-color-xl: var(--clr-green);
-  --heading-text-color-l: #c4622d;
-  --faq-title-background-color: #00806e;
-  --faq-title-color: #fff;
-  --faq-text-color: #414042;
-  --faq-implant-text-color: #c4622d;
-  --scrollbar-track-color: #ddd;
-  --list-marker-color: #c4622d;
-  --columns-button-color: #ffc107;
+  --heading-text-color-l: var(--clr-orange-brown);
+  --faq-title-background-color: var(--clr-green);
+  --faq-title-color: var(--clr-white);
+  --faq-text-color: var(--clr-dark-grey);
+  --faq-implant-text-color: var(--clr-orange-brown);
+  --list-marker-color: var(--clr-orange-brown);
+  --columns-button-color: var(--clr-yellow);
   --conditions-background-color: #f4f4f4;
 
   /* fonts */
@@ -143,6 +145,8 @@
   --heading-font-family-xxl: var(--ff-ITCAvantGardeGothicW01-Md);
   --heading-font-family-xl: var(--ff-ITCAvantGardeGothicW01-Md);
   --heading-font-family-l: var(--ff-ITCAvantGardeGothicW01-Dm);
+  --heading-font-family-m: var(--ff-ITCAvantGardeGothicW01-Bd);
+  --heading-font-family-s: var(--ff-ITCAvantGardeGothicW01-Bd);
   --header-tools-font-family: var(--ff-ITCAvantGardeGothicW01-Md);
   --footer-font-family: var(--ff-ITCAvantGardeGothicW01-Book);
   --isi-title-font-family: var(--ff-ITCAvantGardeGothicW01-Bd);
@@ -166,12 +170,12 @@
   --body-line-height: 1.25;
 
   /* heading sizes */
-  --heading-font-size-xxl: 30px;
-  --heading-font-size-xl: 24px;
-  --heading-font-size-l: 18px;
+  --heading-font-size-xxl: 32px;
+  --heading-font-size-xl: 30px;
+  --heading-font-size-l: 21px;
   --heading-font-size-m: 18px;
-  --heading-font-size-s: 20px;
-  --heading-font-size-xs: 18px;
+  --heading-font-size-s: 16px;
+  --heading-font-size-xs: 16px;
 
   /* nav height */
   --nav-height-mobile: 66px;
@@ -188,22 +192,37 @@
   --scrollbar-width: 10px;
 }
 
-@media (min-width: 992px) {
-  :root {
+/* tablet break point */
+@media (min-width: 768px) {
+   :root {
     --heading-font-size-xxl: 32px;
-    --heading-font-size-xl: 24px;
+    --heading-font-size-xl: 32px;
     --heading-font-size-l: 24px;
     --heading-font-size-m: 24px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
+    --heading-font-size-s: 18px;
+    --heading-font-size-xs: 16px;
+    --body-line-height: 1.33;
+  }
+}
+
+/* laptop break point */
+@media (min-width: 992px) {
+  :root {
     --nav-height: var(--nav-height-laptop);
   }
 }
 
-@media (min-width: 768px) {
+/* desktop break point */
+@media (min-width: 1200px) {
   :root {
-    --body-font-size-s: 18px;
-    --body-line-height: 1.33;
+    --nav-height: var(--nav-height-desktop);
+  }
+}
+
+/* hd break point */
+@media (min-width: 1366px) {
+  :root {
+    --nav-height: var(--nav-height-hd);
   }
 }
 
@@ -215,6 +234,12 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
   display: none;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: var(--body-font-size-m);
+  }
 }
 
 body.appear {
@@ -230,7 +255,7 @@ h4, h5, h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.2;
-  margin-top: 1em;
+  margin-top: 0;
   margin-bottom: .5em;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
@@ -257,8 +282,32 @@ h3 {
   font-weight: 700;
 }
 
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
+h4 { 
+  font-size: var(--heading-font-size-m);
+  font-family: var(--heading-font-family-m); 
+  line-height: 1.33;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  h4 { 
+    line-height: 1;
+  }
+}
+
+h5 { 
+  font-size: var(--heading-font-size-s);
+  font-family: var(--heading-font-family-s); 
+  line-height: 1.25;
+  font-weight: 500;
+}
+ 
+@media (min-width: 768px) {
+  h5 { 
+    line-height: 1.33;
+  }
+}
+
 h6 { font-size: var(--heading-font-size-xs) }
 
 p, dl, ol, ul, pre, blockquote {
@@ -410,54 +459,22 @@ main img {
 }
 
 main .section {
-  padding: 0 1.5rem 1.5rem;
+  margin: 65px auto 0;
+  padding: 0 0 1.5rem;
+  width: 88%;
+  max-width: var(--content-max-width);
+}
+
+/* hero/carousel section */
+main .section:first-of-type {
+  margin-top: 0;
+  max-width: 1440px;
 }
 
 /* tablet break point */
 @media (min-width: 768px) {
-  :root {
-    --heading-font-size-xxl: 32px;
-    --heading-font-size-xl: 32px;
-    --heading-font-size-l: 24px;
-    --heading-font-size-m: 24px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 16px;
-  }
-
-  body {
-    font-size: var(--body-font-size-m);
-  }
-}
-
-/* laptop break point */
-@media (min-width: 992px) {
-  :root {
-    --heading-font-size-xxl: 32px;
-    --heading-font-size-xl: 32px;
-    --heading-font-size-l: 24px;
-    --heading-font-size-m: 24px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 16px;
-    --nav-height: var(--nav-height-laptop);
-  }
-
-  .section > div {
-    max-width: 1200px;
-    margin: auto;
-  }
-}
-
-/* desktop break point */
-@media (min-width: 1200px) {
-  :root {
-    --nav-height: var(--nav-height-desktop);
-  }
-}
-
-/* hd break point */
-@media (min-width: 1366px) {
-  :root {
-    --nav-height: var(--nav-height-hd);
+   main .section {
+    width: 90%;
   }
 }
 
