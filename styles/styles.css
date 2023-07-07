@@ -459,8 +459,12 @@ main img {
 }
 
 main .section {
-  margin: 65px auto 0;
+  margin: 45px auto 0; /* less that on live site to offset divider negative margins */
   padding: 0 0 1.5rem;
+}
+
+main .section > div {
+  margin: auto;
   width: 88%;
   max-width: var(--content-max-width);
 }
@@ -468,12 +472,23 @@ main .section {
 /* hero/carousel section */
 main .section:first-of-type {
   margin-top: 0;
+}
+
+main .section:first-of-type > div{
+  width: auto;
   max-width: 1440px;
+}
+
+@media (max-width: 767px) {
+  main .section.about-durysta .columns-wrapper,
+  main .section.client-testimonial .columns-wrapper {
+    width: auto; /* size is different than default <p> only on tablet down */
+  }
 }
 
 /* tablet break point */
 @media (min-width: 768px) {
-   main .section {
+   main .section > div {
     width: 90%;
   }
 }
