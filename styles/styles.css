@@ -536,7 +536,8 @@ main .about-durysta .columns {
   margin-top: 31px;
 }
 
-main .about-durysta p:has(strong) {
+main .about-durysta p > strong {
+  display: block;
   margin-bottom: 31px;
 }
 
@@ -557,7 +558,7 @@ main .about-durysta li::marker {
     max-width: 94%;
   }
 
-  main .about-durysta p:has(strong) {
+  main .about-durysta p > strong {
     margin-bottom: 41px;
   }
 }
