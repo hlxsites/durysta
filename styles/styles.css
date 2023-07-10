@@ -519,11 +519,11 @@ main .section.green-box.carousel-container {
  }
 
 /* hero/carousel section */
-main .section:first-of-type {
+main .section.carousel-container:first-of-type {
   margin-top: 0;
 }
 
-main .section:first-of-type > div{
+main .section.carousel-container:first-of-type > div{
   width: auto;
   max-width: 1440px;
 }

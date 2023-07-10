@@ -8,6 +8,10 @@
   margin-bottom: 40px;
 }
 
+.faq {
+  margin-bottom: 87px;
+}
+
 .faq-header {
   background-color: var(--faq-title-background-color);
   padding: 15px 10px;
@@ -125,6 +129,10 @@
 
 /* tablet break point */
 @media (min-width: 768px) {
+  .faq {
+    margin-bottom: 95px;
+  }
+
   .faq-header {
     padding: 25px 25px 25px 100px;
     font-size: 21px;

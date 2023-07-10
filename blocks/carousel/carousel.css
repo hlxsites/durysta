@@ -157,7 +157,7 @@ main .carousel-nav-right .icon {
 /* Green Box Carousel */
 
 main .section.green-box.carousel-container {
-  margin: 30px auto 90px;
+  margin: 30px auto 120px;
   color: #fff;
   text-align: center;
   border-bottom-left-radius: 25px;
@@ -292,7 +292,7 @@ main .section.green-box.carousel-container .carousel-dot-button {
 
   main .section.green-box.carousel-container {
     margin-top: 100px;
-    margin-bottom: 120px;
+    margin-bottom: 150px;
   }
 
   main .section.green-box.carousel-container .default-content-wrapper {
