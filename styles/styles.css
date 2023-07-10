@@ -519,7 +519,7 @@ main .section.green-box.carousel-container {
  }
 
 /* hero/carousel section */
-main .section:first-of-type {
+main .section.carousel-container:first-of-type {
   margin-top: 0;
 }
 
