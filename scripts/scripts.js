@@ -32,12 +32,32 @@ function buildSectionDivider(main) {
 }
 
 /**
+ * Builds a media-dependent picture
+ * @param {Element} main The container element
+ */
+function buildMediaDependentPicture(main) {
+  const mediaTags = main.querySelectorAll('code');
+
+  mediaTags.forEach((el) => {
+    const alt = el.innerText.trim();
+    const lower = alt.toLowerCase();
+    const mediaTypes = ['mobile', 'tablet', 'laptop', 'desktop', 'hd', 'tablet-plus', 'laptop-plus', 'desktop-plus', 'tablet-minus', 'laptop-minus', 'desktop-minus'];
+    if (mediaTypes.includes(lower)) {
+      el.previousElementSibling.classList.add(`media-${lower}`);
+      el.innerText = '';
+      el.remove();
+    }
+  });
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 function buildAutoBlocks(main) {
   try {
     buildSectionDivider(main);
+    buildMediaDependentPicture(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
