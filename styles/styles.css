@@ -523,7 +523,7 @@ main .section.carousel-container:first-of-type {
   margin-top: 0;
 }
 
-main .section:first-of-type > div{
+main .section.carousel-container:first-of-type > div{
   width: auto;
   max-width: 1440px;
 }
