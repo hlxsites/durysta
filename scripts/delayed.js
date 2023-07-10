@@ -5,29 +5,19 @@ import { sampleRUM, fetchPlaceholders, loadScript } from './lib-franklin.js';
 sampleRUM('cwv');
 
 // add more delayed functionality here
-
-
-// OneTrust Cookies Consent Notice start
 const placeholders = await fetchPlaceholders();
+console.log(placeholders);
 const isProd = window.location.hostname.endsWith(placeholders.hostname);
 
-// loading Adobe launch script
-if(isProd) {
+// Adobe launch script start
 loadScript(
-  'https://assets.adobedtm.com/ba387603a282/12150779357f/launch-da3cd118acca.min.js',{
+  `${isProd ? 'https://assets.adobedtm.com/ba387603a282/12150779357f/launch-da3cd118acca.min.js' : 'https://assets.adobedtm.com/ba387603a282/12150779357f/launch-8b841cf5fdbd-development.min.js'}`,{
     async: '',
     type: 'text/javascript',
     charset: 'UTF-8',
   },);
-} else {
-  loadScript(
-    'https://assets.adobedtm.com/ba387603a282/12150779357f/launch-8b841cf5fdbd-development.min.js',{
-      async: '',
-      type: 'text/javascript',
-      charset: 'UTF-8',
-    },);
-}
 
+// OneTrust Cookies Consent Notice start
 const otId = placeholders.onetrustid;
 if (otId) {
   loadScript('https://cdn.cookielaw.org/scripttemplates/otSDKStub.js', {
