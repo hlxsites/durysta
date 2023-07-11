@@ -12,6 +12,11 @@ import {
   loadCSS,
 } from './lib-franklin.js';
 
+import {
+  div,
+  domEl,
+} from './dom-helpers.js';
+
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
 /**
@@ -88,6 +93,60 @@ export function decorateLinkedPictures(main) {
   });
 }
 
+export function createVideoModal(main, src) {
+  const videoContainer = div({ class: 'video-container' });
+  const videoModal = div({ class: 'video-modal fade-in' });
+  const videoWrap = div({ class: 'video-wrap' });
+  const close = div({ class: 'video-close' });
+  const videoIframe = domEl('iframe', { class: 'video-iframe' });
+
+  videoIframe.setAttribute('src', src);
+  videoWrap.append(videoIframe);
+  videoModal.append(close, videoWrap);
+  videoContainer.append(videoModal);
+  main.append(videoContainer);
+
+  const closeButton = main.querySelector('.video-close');
+  const videoContainerDiv = main.querySelector('.video-container');
+  if (closeButton) {
+    const fadeOut = () => {
+      videoModal.classList.add('fade-out');
+      videoModal.onanimationend = () => {
+        if (videoModal.classList.contains('fade-out')) {
+          videoContainerDiv.remove();
+        }
+      };
+    };
+    closeButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      fadeOut();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.keyCode === 27 || event.key === 'Escape') {
+        fadeOut();
+      }
+    });
+  }
+}
+
+export function decorateVideo(main) {
+  main.querySelectorAll('a').forEach((link) => {
+    // look for picture that have a link after wards
+    const href = link.getAttribute('href');
+    if (href.includes('vimeo')) {
+      const pictures = link.closest('p').nextElementSibling.querySelectorAll('picture');
+      if (pictures.length > 0) {
+        const videoPlaceHolder = pictures[0];
+        videoPlaceHolder.addEventListener('click', () => {
+          createVideoModal(main, href);
+        });
+        link.remove();
+      }
+    }
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -101,6 +160,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  decorateVideo(main);
 }
 
 /**
