@@ -104,20 +104,12 @@
 
   .columns.slide-image-from-left :is(.columns-left, .columns-single) {
     width: unset;
+    align-self: flex-end;
   }
 
   .columns.slide-image-from-right :is(.columns-right, .columns-single) {
     width: unset;
-  }
-
-  .columns.slide-image-from-left :is(.columns-left, .columns-single) :is(img) {
-    position: absolute;
-    bottom: 0;
-  }
-
-  .columns.slide-image-from-right :is(.columns-right, .columns-single) :is(img) {
-    position: absolute;
-    bottom: 0;
+    align-self: flex-end;
   }
 }
 
