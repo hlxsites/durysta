@@ -112,12 +112,12 @@
 
   .columns.slide-image-from-left :is(.columns-left, .columns-single) :is(img) {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
   }
 
   .columns.slide-image-from-right :is(.columns-right, .columns-single) :is(img) {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
   }
 }
 
