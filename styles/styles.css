@@ -657,8 +657,44 @@ main .video-container {
   z-index: 1000;
   overflow-x: hidden;
   overflow-y: auto;
-  /* stylelint-disable-next-line color-function-notation */
-  background-color: rgba(0, 0, 0, 50%);
+}
+
+main .video-container.fade-in {
+  animation-name: video-container-fade-in;
+  animation-fill-mode: both;
+  animation-duration: 0.15s;
+  animation-timing-function: linear;
+}
+
+main .video-container.fade-out {
+  animation-name: video-container-fade-out;
+  animation-fill-mode: both;
+  animation-duration: 0.15s;
+  animation-timing-function: linear;
+}
+
+@keyframes video-container-fade-in {
+  0% {
+    /* stylelint-disable-next-line color-function-notation */
+    background-color: rgba(0, 0, 0, 0%);
+  }
+
+  100% {
+    /* stylelint-disable-next-line color-function-notation */
+    background-color: rgba(0, 0, 0, 75%);
+  }
+}
+
+@keyframes video-container-fade-out {
+  0% {
+    /* stylelint-disable-next-line color-function-notation */
+    background-color: rgba(0, 0, 0, 75%);
+  }
+
+  100% {
+    /* stylelint-disable-next-line color-function-notation */
+    background-color: rgba(0, 0, 0, 0%);
+  }
 }
 
 main .video-modal {
@@ -696,24 +732,27 @@ main .video-close {
   width: 17px;
   height: 17px;
   background: url('../icons/modal-close.png') center/17px no-repeat;
+  cursor: pointer;
 }
 
-main .fade-in {
-  animation-name: fade-in;
+main .video-modal.fade-in {
+  animation-name: video-modal-fade-in;
   animation-fill-mode: both;
   animation-duration: 0.5s;
+  animation-timing-function: ease-out;
 }
 
-main .fade-out {
-  animation-name: fade-out;
+main .video-modal.fade-out {
+  animation-name: video-modal-fade-out;
   animation-fill-mode: both;
   animation-duration: 0.3s;
+  animation-timing-function: ease-out;
 }
 
-@keyframes fade-in {
+@keyframes video-modal-fade-in {
   0% {
     opacity: 0;
-    transform: translateY(- var(--video-translate-y));
+    transform: translateY(-25%);
   }
 
   100% {
@@ -722,7 +761,7 @@ main .fade-out {
   }
 }
 
-@keyframes fade-out {
+@keyframes video-modal-fade-out {
   0% {
     opacity: 1;
     transform: translateY(var(--video-translate-y));
@@ -730,7 +769,7 @@ main .fade-out {
 
   100% {
     opacity: 0;
-    transform: translateY(- var(--video-translate-y));
+    transform: translateY(-25%);
   }
 }
 

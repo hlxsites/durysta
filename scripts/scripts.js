@@ -94,7 +94,7 @@ export function decorateLinkedPictures(main) {
 }
 
 export function createVideoModal(main, src) {
-  const videoContainer = div({ class: 'video-container' });
+  const videoContainer = div({ class: 'video-container fade-in' });
   const videoModal = div({ class: 'video-modal fade-in' });
   const videoWrap = div({ class: 'video-wrap' });
   const close = div({ class: 'video-close' });
@@ -111,6 +111,7 @@ export function createVideoModal(main, src) {
   if (closeButton) {
     const fadeOut = () => {
       videoModal.classList.add('fade-out');
+      videoContainer.classList.add('fade-out');
       videoModal.onanimationend = () => {
         if (videoModal.classList.contains('fade-out')) {
           videoContainerDiv.remove();
