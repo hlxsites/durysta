@@ -6,7 +6,6 @@ sampleRUM('cwv');
 
 // add more delayed functionality here
 const placeholders = await fetchPlaceholders();
-console.log(placeholders);
 const isProd = window.location.hostname.endsWith(placeholders.hostname);
 
 // Adobe launch script start
