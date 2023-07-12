@@ -69,27 +69,45 @@ function buildAutoBlocks(main) {
   }
 }
 
-export function linkPicture(picture) {
-  const nextSib = picture.parentNode.nextElementSibling;
-  if (nextSib) {
-    const a = nextSib.querySelector('a');
-    if (a && a.textContent.startsWith('https://')) {
-      a.innerHTML = '';
-      a.className = '';
-      a.appendChild(picture);
+function linkPicture(picture) {
+  const checkAndAppendLink = (anchor) => {
+    if (anchor && anchor.textContent.trim().startsWith('https://')) {
+      anchor.innerHTML = '';
+      anchor.className = '';
+      anchor.appendChild(picture);
+    }
+  };
+
+  // Handle case where link is directly after image, or with a <br> between.
+  let nextSib = picture.nextElementSibling;
+  if (nextSib?.tagName === 'BR') {
+    const br = nextSib;
+    nextSib = nextSib.nextElementSibling;
+    br.remove();
+  }
+
+  if (nextSib?.tagName === 'A') {
+    checkAndAppendLink(nextSib);
+    return;
+  }
+
+  // Handle case where link is in a separate paragraph
+  const parent = picture.parentElement;
+  const parentSibling = parent.nextElementSibling;
+  if (parent.tagName === 'P' && parentSibling?.tagName === 'P') {
+    const maybeA = parentSibling.children?.[0];
+    if (parentSibling.children?.length === 1 && maybeA?.tagName === 'A') {
+      checkAndAppendLink(maybeA);
+      if (parent.children.length === 0) {
+        parent.remove();
+      }
     }
   }
 }
 
-export function decorateLinkedPictures(main) {
-  main.querySelectorAll('picture').forEach((picture) => {
-    if (!picture.closest('div.block')) {
-      const p = picture.parentElement;
-      linkPicture(picture);
-      if (p.tagName === 'P' && p.childElementCount === 0) {
-        p.remove();
-      }
-    }
+export function decorateLinkedPictures(block) {
+  block.querySelectorAll('picture').forEach((picture) => {
+    linkPicture(picture);
   });
 }
 
