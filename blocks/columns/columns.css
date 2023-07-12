@@ -95,19 +95,29 @@
 
 @media (min-width: 768px) {
   .columns.slide-image-from-left > div {
-    align-items: end;
+    align-items: stretch;
   }
 
   .columns.slide-image-from-right > div {
-    align-items: end;
+    align-items: stretch;
   }
 
   .columns.slide-image-from-left :is(.columns-left, .columns-single) {
     width: unset;
   }
-  
+
   .columns.slide-image-from-right :is(.columns-right, .columns-single) {
     width: unset;
+  }
+
+  .columns.slide-image-from-left :is(.columns-left, .columns-single) :is(img) {
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .columns.slide-image-from-right :is(.columns-right, .columns-single) :is(img) {
+    position: absolute;
+    bottom: 0px;
   }
 }
 
