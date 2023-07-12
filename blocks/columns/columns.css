@@ -26,7 +26,7 @@
 
 @media (min-width: 768px) {
   .columns > div {
-    align-items: start;
+    align-items: stretch;
     flex-direction: unset;
     gap: 32px;
   }
@@ -94,14 +94,6 @@
 }
 
 @media (min-width: 768px) {
-  .columns.slide-image-from-left > div {
-    align-items: stretch;
-  }
-
-  .columns.slide-image-from-right > div {
-    align-items: stretch;
-  }
-
   .columns.slide-image-from-left :is(.columns-left, .columns-single) {
     width: unset;
     align-self: flex-end;
