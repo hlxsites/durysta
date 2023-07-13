@@ -112,27 +112,53 @@ export function decorateLinkedPictures(block) {
 }
 
 export function createVideoModal(main, src) {
-  const videoContainer = div({ class: 'video-container fade-in' });
-  const videoModal = div({ class: 'video-modal fade-in' });
-  const videoWrap = div({ class: 'video-wrap' });
-  const close = div({ class: 'video-close' });
-  const videoIframe = domEl('iframe', { class: 'video-iframe' });
+  if (
+    main.querySelector('.video-container') !== null &&
+    main.querySelector('.video-iframe') !== null &&
+    !main.querySelector('.video-iframe').getAttribute('src').startsWith(src)
+  ) {
+    const videoContainer = main.querySelector('.video-container');
+    videoContainer.remove();
+  }
 
-  videoIframe.setAttribute('src', src);
-  videoWrap.append(videoIframe);
-  videoModal.append(close, videoWrap);
-  videoContainer.append(videoModal);
-  main.append(videoContainer);
+  if (main.querySelector('.video-container') === null) {
+    const videoContainer = div({ class: 'video-container fade-in' });
+    const videoModal = div({ class: 'video-modal fade-in' });
+    const videoWrap = div({ class: 'video-wrap' });
+    const close = div({ class: 'video-close' });
+    const videoIframe = domEl('iframe', { class: 'video-iframe', allow: 'autoplay' });
+
+    videoIframe.setAttribute('src', `${src}&api=1&autoplay=1`);
+    videoWrap.append(videoIframe);
+    videoModal.append(close, videoWrap);
+    videoContainer.append(videoModal);
+    main.append(videoContainer);
+  }
 
   const closeButton = main.querySelector('.video-close');
-  const videoContainerDiv = main.querySelector('.video-container');
+  const videoContainer = main.querySelector('.video-container');
+  const videoModal = main.querySelector('.video-modal');
+  const videoIframe = main.querySelector('.video-iframe');
+  if (videoModal) {
+    videoModal.classList.add('fade-in');
+  }
+  if (videoContainer) {
+    videoContainer.classList.add('fade-in');
+  }
+  if (videoIframe) {
+    videoIframe.contentWindow.postMessage('{"method":"play"}', '*');
+  }
   if (closeButton) {
     const fadeOut = () => {
+      videoIframe.contentWindow.postMessage('{"method":"pause"}', '*');
       videoModal.classList.add('fade-out');
+      videoModal.classList.remove('fade-in');
       videoContainer.classList.add('fade-out');
+      videoContainer.classList.remove('fade-in');
       videoModal.onanimationend = () => {
         if (videoModal.classList.contains('fade-out')) {
-          videoContainerDiv.remove();
+          videoModal.classList.remove('fade-out');
+          videoContainer.classList.remove('fade-out');
         }
       };
     };
@@ -157,6 +183,8 @@ export function decorateVideo(main) {
       const pictures = link.closest('p').nextElementSibling.querySelectorAll('picture');
       if (pictures.length > 0) {
         const videoPlaceHolder = pictures[0];
+        videoPlaceHolder.classList.add('video-thumbnail');
+        videoPlaceHolder.parentElement.classList.add('video-thumbnail-wrapper');
         videoPlaceHolder.addEventListener('click', () => {
           createVideoModal(main, href);
         });

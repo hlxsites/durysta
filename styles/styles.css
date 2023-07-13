@@ -657,6 +657,7 @@ main .video-container {
   z-index: 1000;
   overflow-x: hidden;
   overflow-y: auto;
+  display: none;
 }
 
 main .video-container.fade-in {
@@ -664,6 +665,7 @@ main .video-container.fade-in {
   animation-fill-mode: both;
   animation-duration: 0.15s;
   animation-timing-function: linear;
+  display:unset;
 }
 
 main .video-container.fade-out {
@@ -671,6 +673,7 @@ main .video-container.fade-out {
   animation-fill-mode: both;
   animation-duration: 0.15s;
   animation-timing-function: linear;
+  display:unset;
 }
 
 @keyframes video-container-fade-in {
@@ -695,6 +698,21 @@ main .video-container.fade-out {
     /* stylelint-disable-next-line color-function-notation */
     background-color: rgba(0, 0, 0, 0%);
   }
+}
+
+main .video-thumbnail-wrapper {
+  justify-content: center;
+  text-align: center;
+}
+
+main .video-thumbnail {
+  cursor: pointer;
+}
+
+main .video-thumbnail img {
+  width: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 main .video-modal {
@@ -780,6 +798,16 @@ main .video-modal.fade-out {
     --video-translate-y: 3%;
   }
 
+  main .video-thumbnail-wrapper {
+    justify-content: unset;
+    text-align: unset;
+  }
+
+  main .video-thumbnail img {
+    margin-top: 45px;
+    margin-bottom: 85px;
+  }
+
   main .video-modal {
     width: 90%;
     height: 485px;
@@ -807,5 +835,10 @@ main .video-modal.fade-out {
 @media (min-width: 1200px) {
   :root {
     --video-translate-y: 4%;
+  }
+
+  main .video-thumbnail img {
+    margin-top: 55px;
+    margin-bottom: 100px;
   }
 }
