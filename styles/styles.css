@@ -501,6 +501,10 @@ main img {
   height: auto;
 }
 
+main picture > img {
+  display: block;
+}
+
 .icon {
   display: inline-block;
   height: 24px;

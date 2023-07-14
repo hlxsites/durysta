@@ -111,29 +111,33 @@ export function decorateLinkedPictures(block) {
   });
 }
 
-export function createVideoModal(main, src) {
+export function createVideoModal(main, src, autoplay) {
   if (
     main.querySelector('.video-container') !== null &&
     main.querySelector('.video-iframe') !== null &&
     !main.querySelector('.video-iframe').getAttribute('src').startsWith(src)
   ) {
-    const videoContainer = main.querySelector('.video-container');
-    videoContainer.remove();
+    const videoIframe = main.querySelector('.video-iframe');
+    videoIframe.setAttribute('src', `${src}&api=1&autoplay=${autoplay}`);
   }
 
   if (main.querySelector('.video-container') === null) {
-    const videoContainer = div({ class: 'video-container fade-in' });
-    const videoModal = div({ class: 'video-modal fade-in' });
+    const videoContainer = div({ class: 'video-container' });
+    const videoModal = div({ class: 'video-modal' });
     const videoWrap = div({ class: 'video-wrap' });
     const close = div({ class: 'video-close' });
     const videoIframe = domEl('iframe', { class: 'video-iframe', allow: 'autoplay' });
 
-    videoIframe.setAttribute('src', `${src}&api=1&autoplay=1`);
+    videoIframe.setAttribute('src', `${src}&api=1&autoplay=${autoplay}`);
     videoWrap.append(videoIframe);
     videoModal.append(close, videoWrap);
     videoContainer.append(videoModal);
     main.append(videoContainer);
   }
+}
+
+export function startVideoModal(main, src) {
+  createVideoModal(main, src, 1);
 
   const closeButton = main.querySelector('.video-close');
   const videoContainer = main.querySelector('.video-container');
@@ -145,8 +149,10 @@ export function createVideoModal(main, src) {
   if (videoContainer) {
     videoContainer.classList.add('fade-in');
   }
-  if (videoIframe) {
-    videoIframe.contentWindow.postMessage('{"method":"play"}', '*');
+  if (videoIframe && videoModal) {
+    videoModal.onanimationend = () => {
+      videoIframe.contentWindow.postMessage('{"method":"play"}', '*');
+    };
   }
   if (closeButton) {
     const fadeOut = () => {
@@ -176,6 +182,14 @@ export function createVideoModal(main, src) {
 }
 
 export function decorateVideo(main) {
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.querySelector('picture').dispatchEvent(new Event('hover'));
+      }
+    });
+  });
+
   main.querySelectorAll('a').forEach((link) => {
     // look for picture that have a link after wards
     const href = link.getAttribute('href');
@@ -184,11 +198,20 @@ export function decorateVideo(main) {
       if (pictures.length > 0) {
         const videoPlaceHolder = pictures[0];
         videoPlaceHolder.classList.add('video-thumbnail');
-        videoPlaceHolder.parentElement.classList.add('video-thumbnail-wrapper');
+        const videoThumbnailWrapper = link.parentElement;
+        videoThumbnailWrapper.classList.add('video-thumbnail-wrapper');
+        videoObserver.observe(videoThumbnailWrapper);
         videoPlaceHolder.addEventListener('click', () => {
-          createVideoModal(main, href);
+          startVideoModal(main, href);
         });
-        link.remove();
+        videoPlaceHolder.addEventListener('hover', () => {
+          createVideoModal(main, href, 0);
+        });
+        link.innerHTML = '';
+        link.className = '';
+        link.href = '#0';
+        link.onclick = () => false;
+        link.appendChild(videoPlaceHolder);
       }
     }
   });
