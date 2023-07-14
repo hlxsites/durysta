@@ -1,0 +1,239 @@
+@keyframes pulse {
+  0% { transform: scale(1)}
+  50% { transform: scale(1.1)}
+  100% { transform: scale(1)}
+}
+
+.scroll-animation {
+  --scroll-animation-height: 554px;
+
+  display: block;
+  height: calc(var(--scroll-animation-height) * var(--scroll-animation-items, 1));
+  padding: calc((100vh - var(--scroll-animation-height)) / 2) 0;
+}
+
+.scroll-animation .scroll-animation-window {
+  position: sticky;
+  height: var(--scroll-animation-height);
+  top: calc((100vh - var(--scroll-animation-height)) / 2);
+  display: grid;
+  overflow: hidden;
+}
+
+.scroll-animation .scroll-animation-scroll-icon {
+  background-image: url("/icons/scroll.jpg");
+  width: 58px;
+  height: 102px;
+  position: absolute;
+  top: 25%;
+  left: 20px;
+  animation: pulse 1s infinite;
+  opacity: 0;
+  transition: ease-in-out 300ms;
+}
+
+.scroll-animation .scroll-animation-image {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  z-index: 1;
+  grid-area: 1 / 1;
+  opacity: 0;
+  transition: ease-in-out 300ms;
+}
+
+.scroll-animation .scroll-animation-body {
+  grid-area: 1 / 1;
+}
+
+.scroll-animation .scroll-animation-heading {
+  position: absolute;
+  z-index: 3;
+  background-color: #00806e;
+  color: #fff;
+  border-radius: 12rem;
+  padding: 0.7rem 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.scroll-animation .scroll-animation-text {
+  position: absolute;
+  z-index: 2;
+  text-align: left;
+  padding: initial;
+  font-size: var(--body-font-size-xs);
+  color: #414042;
+  opacity: 0;
+  transition: ease-in-out 500ms;
+}
+
+.scroll-animation .scroll-animation-image[data-status="behind"],
+.scroll-animation .scroll-animation-image[data-status="active"],
+.scroll-animation .scroll-animation-body[data-status="active"] .scroll-animation-text{
+  opacity: 1;
+}
+
+.scroll-animation .scroll-animation-body[data-status="active"] .scroll-animation-heading {
+  color: #fff;
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url("/icons/desktop_eye_circle_active.png");
+  margin: -0.3rem -1.6rem;
+  padding: 2.3rem 2.6rem;
+}
+
+/* Custom placement for each heading and text */
+
+.scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
+  top: 65%;
+  left: 11%;
+}
+
+.scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
+  top: 80%;
+  left: 6%;
+}
+
+.scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
+  top: 9%;
+  left: 10%;
+}
+
+.scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
+  top: 14%;
+  left: 35%;
+}
+
+.scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
+  top: 62%;
+  left: 75%;
+}
+
+.scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
+  top: 78%;
+  right: 0;
+  width: 140px;
+}
+
+/* tablet break point */
+@media (min-width: 768px) {
+  .scroll-animation .scroll-animation-text {
+    font-size: var(--body-font-size-s);
+  }
+
+  .scroll-animation[data-current-index="0"] .scroll-animation-scroll-icon,
+  .scroll-animation[data-current-index="3"] .scroll-animation-scroll-icon {
+    opacity: 1;
+  }
+
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
+		top: 75%;
+		left: 23%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
+    top: 81%;
+    left: 6%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
+		top: 13%;
+		left: 65%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
+		top: 10%;
+		left: 74%;
+		width: auto;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
+		top: 70%;
+		left: 72%;
+    right: auto;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
+		top: 70%;
+		left: 82%;
+		width: 140px;
+  }
+}
+
+/* desktop break point */
+@media (min-width: 1200px) {
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
+		top: 75%;
+		left: 23%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
+		top: 60%;
+		left: 6%;
+		width: auto;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
+		top: 13%;
+		left: 65%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
+		top: 10%;
+		left: 74%;
+		width: auto;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
+		top: 70%;
+		left: 77%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
+		top: 70%;
+		left: 83.8%;
+    width: 155px;
+  }
+}
+
+/* hd break point */
+@media (min-width: 1366px) {
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-heading {
+    top: 69%;
+    left: 22%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="1"] .scroll-animation-text {
+    top: 53%;
+    left: 7%;
+    width: 180px;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-heading {
+    top: 14%;
+    left: 69%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="2"] .scroll-animation-text {
+    top: 12%;
+    left: 76%;
+    width: 230px;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-heading {
+    top: 74%;
+    left: 76%;
+  }
+  
+  .scroll-animation .scroll-animation-body[data-index="3"] .scroll-animation-text {
+    top: 73%;
+    left: 83%;
+    width: 155px;
+  }
+}
